@@ -1,0 +1,83 @@
+.button-accent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  padding: 0 37px;
+  height: 44px;
+
+  font-family: $fontPrimary;
+  border: 0;
+  border-radius: 22px;
+
+  color: getColor('background-primary');
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3;
+  text-align: center;
+
+  cursor: pointer;
+  background-color: getColor('accent');
+}
+
+.button {
+  @extend .button-accent;
+
+  color: getColor('accent');
+  background-color: getColor('background-primary');
+
+  transition: background-color $transitionDuration $transitionTiming;
+
+  &:hover,
+  &:focus {
+    background-color: #ecebeb;
+    outline: none;
+  }
+}
+
+.button__icon {
+  display: inline-flex;
+  width: 4px;
+  height: 8px;
+  fill: currentColor;
+
+  &--append {
+    margin-left: 12px;
+  }
+}
+
+.link-button-accent {
+  @extend .button-accent;
+  display: inline-flex;
+
+  padding-left: 23px;
+  padding-right: 23px;
+  height: 40px;
+
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+
+  transition: background-color $transitionDuration $transitionTiming;
+
+  &:hover,
+  &:focus {
+    background-color: #c7133e;
+    outline: none;
+  }
+}
+
+.link-button {
+  @extend .link-button-accent;
+
+  color: getColor('accent');
+  background-color: getColor('background-primary');
+
+  &:hover,
+  &:focus {
+    background-color: #ecebeb;
+  }
+}

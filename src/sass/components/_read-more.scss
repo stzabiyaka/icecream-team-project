@@ -1,0 +1,24 @@
+.read-more {
+  max-width: 176px;
+}
+.extra-content {
+  display: none;
+
+  #read-more:checked ~ & {
+    display: block;
+  }
+}
+
+.more {
+  #read-more:checked ~ & {
+    display: none;
+  }
+}
+
+.less {
+  display: none;
+
+  #read-more:checked ~ & {
+    display: inline-block;
+  }
+}

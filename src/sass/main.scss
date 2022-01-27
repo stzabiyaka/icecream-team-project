@@ -3,5 +3,38 @@
  * Все паршалы подключаются сюда.
  */
 
-// Стили для файла с примером HTML-фрагмента
-@import './example';
+@import './utils/variables';
+
+@import './utils/functions';
+
+@import './utils/mixins';
+
+@import './base/dropstyles';
+
+@import './layout/body';
+
+@import './layout/section';
+
+@import './layout/container';
+
+@import './components/button';
+
+@import './components/read-more';
+
+@import './partials/modal-window';
+
+@import './partials/hero-header';
+
+@import './partials/products';
+
+@import './partials/about';
+
+@import './partials/advantages';
+
+@import './partials/gallery';
+
+@import './partials/reviews';
+
+@import './partials/contacts';
+
+@import './partials/footer';

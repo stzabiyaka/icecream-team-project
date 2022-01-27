@@ -1,0 +1,4 @@
+// flex-basis calculation
+@mixin flexBasis($column: 3, $gap: 30px) {
+  flex-basis: calc((100% - #{$gap * (#{$column} - 1)}) / #{$column});
+}
