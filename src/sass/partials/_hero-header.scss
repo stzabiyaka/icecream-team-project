@@ -1,0 +1,11 @@
+.hero__title {
+  font-family: $fontSecondary;
+  font-size: 58px;
+  line-height: 0.905;
+  /* or 52px */
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: getColor('accent');
+}
