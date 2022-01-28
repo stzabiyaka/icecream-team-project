@@ -10,7 +10,9 @@
 }
 
 .more {
-  #read-more:checked ~ & {
+  display: inline-block;
+
+  #read-more:checked ~ .button.read-more & {
     display: none;
   }
 }
@@ -18,7 +20,7 @@
 .less {
   display: none;
 
-  #read-more:checked ~ & {
+  #read-more:checked ~ .button.read-more & {
     display: inline-block;
   }
 }

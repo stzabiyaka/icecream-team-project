@@ -29,7 +29,7 @@
   color: getColor('accent');
   background-color: getColor('background-primary');
 
-  transition: background-color $transitionDuration $transitionTiming;
+  @include cssTransition(background-color);
 
   &:hover,
   &:focus {
@@ -61,7 +61,7 @@
   font-weight: 400;
   text-decoration: none;
 
-  transition: background-color $transitionDuration $transitionTiming;
+  @include cssTransition(background-color);
 
   &:hover,
   &:focus {
