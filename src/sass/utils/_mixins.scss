@@ -3,7 +3,7 @@
 //Миксин вычисляет flex-basis для flex-элемента
 //Принимает два параметра: (1- количество элементов в строке, 2- ширина промежутка между элементами в пикселях)
 @mixin flexBasis($column: 3, $gap: 30px) {
-  flex-basis: calc((100% - #{$gap * (#{$column} - 1)}) / #{$column});
+  flex-basis: calc((100% - (#{$gap} * (#{$column} - 1))) / #{$column});
 }
 
 //transition properties, duration, timing function
@@ -33,7 +33,7 @@
   //if the key exists in the map
   @if map-has-key($breakpoints, $breakpoint) {
     //prints a media query based on the value
-    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }
   }

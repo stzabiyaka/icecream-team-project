@@ -22,7 +22,7 @@
 
 .gallery__item {
   display: block;
-  flex-basis: 40px;
+  width: 40px;
   height: 40px;
   border: 2px solid getColor('text-label');
   border-radius: 10px;

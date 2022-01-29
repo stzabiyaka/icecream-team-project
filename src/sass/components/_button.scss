@@ -40,11 +40,12 @@
 
 .button__icon {
   display: inline-flex;
-  width: 4px;
-  height: 8px;
-  fill: currentColor;
+  stroke: currentColor;
+  // fill: currentColor;
 
   &--append {
+    width: 8px;
+    height: 10px;
     margin-left: 12px;
   }
 }
