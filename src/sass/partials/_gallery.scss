@@ -44,13 +44,15 @@
     max-width: 80px;
   }
 
+  @include cssTransition(filter);
+
   &:hover {
     box-shadow: 0px 2px 10px rgba(212, 20, 67, 0.3);
   }
 }
 
 .gallery__image {
-  @include cssTransition(filter box-shadow);
+  @include cssTransition(filter);
 
   .gallery__item:hover & {
     filter: brightness(120%) saturate(50%);

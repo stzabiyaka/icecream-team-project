@@ -5,25 +5,29 @@
 .extra-content {
   display: none;
 
-  #read-more:checked ~ & {
+  &.is-open {
     display: block;
   }
-}
 
-.more {
-  display: inline-block;
-  font-size: inherit;
+  //   #read-more:checked ~ & {
+  //     display: block;
+  //   }
+  // }
 
-  #read-more:checked ~ .read-more & {
-    display: none;
-  }
-}
+  // .more {
+  //   display: inline-block;
+  //   font-size: inherit;
 
-.less {
-  display: none;
-  font-size: inherit;
+  //   #read-more:checked ~ .read-more & {
+  //     display: none;
+  //   }
+  // }
 
-  #read-more:checked ~ .read-more & {
-    display: inline-block;
-  }
+  // .less {
+  //   display: none;
+  //   font-size: inherit;
+
+  //   #read-more:checked ~ .read-more & {
+  //     display: inline-block;
+  //   }
 }
