@@ -25,8 +25,9 @@
   display: block;
   @include flexBasis(10, 5px);
   max-width: 30px;
-  border: 2px solid getColor('text-label');
+
   border-radius: 10px;
+  overflow: hidden;
 
   &:not(:last-child) {
     margin-right: 5px;
@@ -38,5 +39,12 @@
 
   @include respondTo(desktop) {
     max-width: 80px;
+  }
+}
+
+.gallery__image {
+  @include cssTransition(filter);
+  &:hover {
+    filter: brightness(120%);
   }
 }
