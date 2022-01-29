@@ -18,22 +18,25 @@
 
 .gallery {
   display: flex;
+  justify-content: center;
 }
 
 .gallery__item {
   display: block;
-  flex-basis: 40px;
-  height: 40px;
+  @include flexBasis(10, 5px);
+  max-width: 30px;
   border: 2px solid getColor('text-label');
   border-radius: 10px;
 
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
   @include respondTo(tablet) {
-    flex-basis: 84px;
-    height: 84px;
+    max-width: 50px;
   }
 
   @include respondTo(desktop) {
-    flex-basis: 138px;
-    height: 138px;
+    max-width: 80px;
   }
 }
