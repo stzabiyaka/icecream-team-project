@@ -3,6 +3,27 @@ $mobile: 480px;
 $tablet: 768px;
 $desktop: 1280px;
 
+// site colors palette
+$colors: (
+  'text-primary': #907e82,
+  'text-secondary': #000000,
+  'text-label': #ffa5ba,
+  'accent': #d41443,
+  'background-primary': #ffffff,
+  'background-secondary': #fff5f6,
+  'background-hero': #ffb8ca,
+  'backdrop': rgba(225, 121, 146, 0.5),
+  'icon': #fea5bb,
+);
+
+// site fonts
+$fontPrimary: 'DM Sans', sans-serif;
+$fontSecondary: 'Titan One', cursive;
+
+// transitions duration and timing
+$transitionDuration: 300ms;
+$transitionTiming: cubic-bezier(0.4, 0, 0.2, 1);
+
 // breakpoints map for respondTo() mixin
 $breakpoints: (
   'mobile': (
@@ -42,23 +63,3 @@ $breakpoints: (
     max-width: #{$desktop - 1},
   ),
 ) !default;
-
-// site colors palette
-$colors: (
-  'text-primary': #907e82,
-  'text-secondary': #000000,
-  'text-label': #ffa5ba,
-  'accent': #d41443,
-  'background-primary': #ffffff,
-  'background-secondary': #fff5f6,
-  'background-hero': #ffb8ca,
-  'icon': #fea5bb,
-);
-
-// site fonts
-$fontPrimary: 'DM Sans', sans-serif;
-$fontSecondary: 'Titan One', cursive;
-
-// transitions duration and timing
-$transitionDuration: 300ms;
-$transitionTiming: cubic-bezier(0.4, 0, 0.2, 1);
