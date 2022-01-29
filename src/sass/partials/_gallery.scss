@@ -23,7 +23,7 @@
 
 .gallery__item {
   display: block;
-  @include flexBasis(10, 5px);
+  @include flexBasis(11, 5px);
   max-width: 30px;
 
   border-radius: 15px;
@@ -33,6 +33,9 @@
     margin-right: 5px;
   }
 
+  &:nth-child(4) {
+    flex: 2;
+  }
   @include respondTo(tablet) {
     max-width: 50px;
   }
