@@ -1,5 +1,6 @@
 .read-more {
-  max-width: 176px;
+  // max-width: 176px;
+  width: fit-content;
 }
 .extra-content {
   display: none;
@@ -10,15 +11,19 @@
 }
 
 .more {
-  #read-more:checked ~ & {
+  display: inline-block;
+  font-size: inherit;
+
+  #read-more:checked ~ .read-more & {
     display: none;
   }
 }
 
 .less {
   display: none;
+  font-size: inherit;
 
-  #read-more:checked ~ & {
+  #read-more:checked ~ .read-more & {
     display: inline-block;
   }
 }

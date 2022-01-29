@@ -3,7 +3,8 @@
   color: getColor('text-primary');
   background-color: getColor('background-primary');
 
-  &.modal-open {
+  &.modal-open,
+  &.menu-open {
     overflow: hidden;
   }
 }

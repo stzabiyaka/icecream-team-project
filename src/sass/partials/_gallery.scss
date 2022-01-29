@@ -1,0 +1,50 @@
+.gallery__section {
+  padding-bottom: 80px;
+
+  background-image: linear-gradient(
+    to bottom,
+    getColor('background-secondary') 31.3%,
+    getColor('background-primary') 31.3%
+  );
+
+  @include respondTo(tablet) {
+    padding-bottom: 121px;
+  }
+
+  @include respondTo(desktop) {
+    padding-bottom: 123px;
+  }
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery__item {
+  display: block;
+  @include flexBasis(10, 5px);
+  max-width: 30px;
+
+  border-radius: 10px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  @include respondTo(tablet) {
+    max-width: 50px;
+  }
+
+  @include respondTo(desktop) {
+    max-width: 80px;
+  }
+}
+
+.gallery__image {
+  @include cssTransition(filter);
+  &:hover {
+    filter: brightness(120%);
+  }
+}
