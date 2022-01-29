@@ -1,0 +1,44 @@
+// flex-basis calculation
+
+//Миксин вычисляет flex-basis для flex-элемента
+//Принимает два параметра: (1- количество элементов в строке, 2- ширина промежутка между элементами в пикселях)
+@mixin flexBasis($column: 3, $gap: 30px) {
+  flex-basis: calc((100% - (#{$gap} * (#{$column} - 1))) / #{$column});
+}
+
+//transition properties, duration, timing function
+
+// Миксин позволяет добавлять анимируемые свойства от 1 до бесконечности
+//  // // // // //                    @include cssTransition(color background-color box-shadow);
+// В примере добавлены 3 свойства кнопки ^^^^   ^^^^^^^^^^    ^^^^^^^^
+// фильтра из Портфолио.
+// Свойства добавлять через пробел без запятых.
+@mixin cssTransition(
+  $property,
+  $duration: $transitionDuration,
+  $timingFunction: $transitionTiming
+) {
+  transition-property: $property;
+  transition-duration: $duration;
+  transition-timing-function: $timingFunction;
+}
+
+//respondTo breakpoints
+
+//Миксин прописывает медиаправило для соответствующей точки перелома дизайна
+//@param {String} $breakpoint - Breakpoint name
+//@require $breakpoints
+
+@mixin respondTo($breakpoint) {
+  //if the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    //prints a media query based on the value
+    @media screen and #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  //if the key doesn't exsist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}" + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
