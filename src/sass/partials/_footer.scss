@@ -5,21 +5,19 @@
 .box {
   @include respondTo(tablet) {
     display: flex;
-    flex-wrap: wrap;
   }
   @include respondTo(desktop) {
-    flex-direction: column;
   }
 }
 .title__box {
-  padding-top: 10px;
   width: 234px;
-
+  padding-top: 10px;
+  
   @include respondTo(tablet) {
-    width: 340px;
+    min-width: 340px;
   }
   @include respondTo(desktop) {
-    width: 100%;
+    
   }
 }
 .title {
@@ -85,8 +83,14 @@
   }
 }
 .social__box {
+  justify-content: right;
+  display: flex;
+  flex-wrap: wrap;
   @include respondTo(tablet) {
-    margin-left: 198px;
+    margin-left: 92px;
+  }
+  @include respondTo(desktop) {
+    margin-left: 257px;
   }
 }
 .social__media {
@@ -110,6 +114,10 @@
   padding: 8px;
   border-radius: 50%;
   background-color: getColor('icon');
+  &:hover,
+  &:focus{
+    background-color: getColor('accent');
+  }
 }
 .icon {
   fill: #fff;
@@ -118,9 +126,11 @@
   display: flex;
   justify-content: right;
   @include respondTo(tablet) {
-    margin-left: 470px;
-    margin-top: -93px;
+
     display: flex;
+  }
+  @include respondTo(desktop) {
+    margin-top: 50px;
   }
 }
 .contact__tel {
@@ -141,4 +151,49 @@
   line-height: 186%;
   text-align: right;
   color: #d41443;
+}
+.border {
+  border: 1px solid #E1E1E1;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff5f6;
+  padding: 22px 0 25px 0;
+  border-top: 1px solid #e1e1e1;
+  @include respondTo(tablet){
+    padding: 28px 0 26px 0;
+  }
+  @include respondTo(desktop){
+    padding: 10px 0;
+  }
+}
+
+.ice-cream{
+  display: inline-flex;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 186%;
+  letter-spacing: 0.02em;
+  color: #907E82;
+}
+.all-rights{
+  display: inline-flex;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 186%;
+  letter-spacing: 0.02em;
+  color: #907E82;
+}
+.ice-cream:before {
+  display: block;
+  content: "\00a9";
+  padding-right: 6px;
 }
