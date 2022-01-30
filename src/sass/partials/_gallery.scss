@@ -33,16 +33,16 @@
 
   justify-content: center;
   grid-gap: 2px;
-  grid: repeat(6, 19px) / repeat(14, 19px);
+  grid: repeat(12, 8.5px) / repeat(28, 8.5px);
 
   @include respondTo(tablet) {
     grid-gap: 4px;
-    grid: repeat(6, 40px) / repeat(14, 40px);
+    grid: repeat(12, 18px) / repeat(28, 18px);
   }
 
   @include respondTo(desktop) {
     grid-gap: 6px;
-    grid: repeat(6, 66px) / repeat(14, 66px);
+    grid: repeat(12, 30px) / repeat(28, 30px);
   }
 }
 
@@ -54,46 +54,38 @@
   overflow: hidden;
 
   &:nth-child(1) {
-    grid-area: 3 / 1 / span 2 / span 2;
+    grid-area: 5 / 1 / span 4 / span 4;
   }
   &:nth-child(2) {
-    grid-area: 2 / 3 / span 2 / span 2;
+    grid-area: 4 / 5 / span 4 / span 4;
   }
   &:nth-child(3) {
-    grid-area: 4 / 3 / span 2 / span 2;
+    grid-area: 8 / 5 / span 4 / span 4;
   }
   &:nth-child(4) {
     border-radius: 5%;
-    grid-area: 1 / 5 / span 4 / span 4;
+    grid-area: 1 / 9 / span 8 / span 8;
   }
   &:nth-child(5) {
-    grid-area: 5 / 5 / span 2 / span 2;
+    grid-area: 9 / 9 / span 4 / span 4;
   }
   &:nth-child(6) {
-    grid-area: 2 / 9 / span 2 / span 2;
+    grid-area: 4 / 17 / span 4 / span 4;
   }
   &:nth-child(7) {
-    grid-area: 4 / 9 / span 2 / span 2;
+    grid-area: 8 / 17 / span 4 / span 4;
   }
   &:nth-child(8) {
-    grid-area: 1 / 11 / span 2 / span 2;
+    grid-area: 3 / 21 / span 4 / span 4;
   }
   &:nth-child(9) {
-    grid-area: 3 / 11 / span 2 / span 2;
+    grid-area: 7 / 21 / span 4 / span 4;
   }
   &:nth-child(10) {
-    grid-area: 3 / 13 / span 2 / span 2;
+    grid-area: 5 / 25 / span 4 / span 4;
   }
 
-  // @include respondTo(tablet) {
-  //   max-width: 50px;
-  // }
-
-  // @include respondTo(desktop) {
-  //   max-width: 80px;
-  // }
-
-  @include cssTransition(filter border-radius);
+  @include cssTransition(filter border-radius box-shadow);
 
   &:hover {
     border-radius: 50%;
@@ -105,7 +97,7 @@
   @include cssTransition(filter scale);
 
   .gallery__item:hover & {
-    filter: brightness(120%) saturate(50%);
+    filter: brightness(110%) saturate(50%);
     transform: scale(120%);
   }
 }
