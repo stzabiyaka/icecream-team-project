@@ -1,19 +1,64 @@
 .contacts {
-  padding-bottom: 113px;
-  background-color: getColor('background-secondary');
+padding-bottom: 113px;
+
+
+@include respondTo(tablet){
+padding-bottom: 158px;
+}
+
+@include respondTo(desktop){
+padding-bottom: 165px;
+// @include colorStopeedGradient(50%, 'background-primary', 'background-secondary');
+}
+    
+}
+
+.contacts--pos{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+@include respondTo(tablet){
+  display: flex;
+  flex-direction: row;
+}
 }
 
 .contacts__card {
-  width: 220px;
+  padding: 43px 20px;
   margin-bottom: 20px;
+  width: 220px;
   background-color: getColor('background-primary');
   box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
   border-radius: 24px;
-  padding: 43px 20px;
-}
+  
+  @include respondTo(tablet){
+    padding: 50px 30px;
+    margin-bottom: 0;
+    @include flexBasis(3, 20px);
+    max-width: 220px;
+ }
+
+  @include respondTo(desktop){
+    padding: 55px 43px;
+    margin-bottom: 0;
+    max-width: 330px;
+    @include flexBasis;
+  }
+  
+&:not(:last-child){
+    @include respondTo(tablet){
+    margin-right: 20px;
+    }
+    @include respondTo(desktop){
+      margin-right: 30px;
+    }
+   }
+ }
 
 .contacts__name {
   margin-bottom: 25px;
+  font-family: $fontPrimary;
   align-items: center;
   text-align: center;
   width: 80px;
@@ -25,27 +70,62 @@
   color: getColor('background-primary');
   background-color: #f0d1a5;
   border-radius: 4px;
+
+  @include respondTo(tablet){
+    margin-bottom: 30px;
+    width: 73px;
+    font-size: 16px;
+    line-height: 1.86;
+  }
 }
 
 .contacts__name--color {
   width: 130px;
   background-color: #c2e297;
+
+  @include respondTo(tablet){
+  width: 138px;
+  }
 }
 
 .contacts__title {
+  margin-bottom: 10px;
+  font-family: $fontPrimary;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.83;
   letter-spacing: 0.04em;
   color: getColor('text-secondary');
+
+  @include respondTo(tablet){
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.86;
+  }
+
+  @include respondTo(desktop){
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.86;
+  }
 }
 
 .contacts__subtitle {
+  font-family: $fontPrimary;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.5;
   color: getColor('text-primary');
+
+  @include respondTo(tablet){
+    font-size: 14px;
+    line-height: 1.64;
+  }
+  @include respondTo(desktop){
+    font-size: 16px;
+    line-height: 1.86;
+   }
 }
 
 .contacts__subtitle::after {
@@ -56,7 +136,19 @@
   margin-top: 25px;
   margin-bottom: 25px;
   border: 1px solid #e1e1e1;
-}
+
+  @include respondTo(tablet){
+   width: 157px;
+   margin-bottom: 30px;
+   margin-top: 30px;
+  }
+
+  @include respondTo(desktop){
+    width: 234px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+  }
+ }
 
 .contacts__link::before {
   content: '';
@@ -66,37 +158,114 @@
   width: 179px;
   height: 0px;
   border: 1px solid #e1e1e1;
+
+  @include respondTo(tablet){
+    width: 157px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+   }
+ 
+   @include respondTo(desktop){
+     width: 234px;
+     margin-bottom: 32px;
+     margin-top: 32px;
+   }
 }
 
 .contacts__list {
   margin-bottom: 10px;
+  @include respondTo(tablet){
+    margin-bottom: 15px;
+  }  
 }
+.contacts__list:nth-of-type(2) {
+  margin-bottom: 0px;
+}
+
 .contacts__date {
+  font-family: $fontPrimary;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.83;
   letter-spacing: 0.04em;
   color: getColor('text-secondary');
+
+  @include respondTo(tablet){
+    font-size: 14px;
+    line-height: 1.86;
+  }
+
+  @include respondTo(desktop){
+    font-size: 16px;
+    line-height: 1.86;
+   }
 }
 
 .contacts__time {
+  font-family: $fontPrimary;
   font-size: 12px;
   line-height: 1.83;
   color: getColor('text-label');
+
+  @include respondTo(tablet){
+    font-size: 14px;
+    line-height: 1.86;
+  }
+  @include respondTo(desktop){
+    font-size: 16px;
+    line-height: 1.86;
+   }
+
+   &:first-child{
+    margin-bottom: 60px;
+   }
 }
 
 .contacts__tel,
 .contacts__mail {
+  font-family: $fontPrimary;
   font-weight: 500;
   font-size: 12px;
   line-height: 1.5;
   color: getColor('text-primary');
   text-decoration: none;
+
+  @include respondTo(tablet){
+    font-size: 14px;
+    line-height: 1.86;
+  }
+
+  @include respondTo(desktop){
+    font-size: 16px;
+    line-height: 1.81;
+  }
 }
 
-.button-accent--pos {
+.contacts__button {
   margin-top: 54px;
-  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respondTo(tablet){
+    margin-top: 80px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;   
+  }
+
+  @include respondTo(desktop){
+    margin-top: 85px;
+  }
 }
 
+.button-accent--pos{
+  margin-bottom: 10px;
+
+  @include respondTo(tablet){
+    margin-right: 15px;
+    margin-bottom: 0;
+  }
+}
 
