@@ -46,3 +46,11 @@
     }
   }
 }
+
+@mixin colorStopeedGradient($point, $color-prim, $color-second) {
+  background-image: linear-gradient(
+    to bottom,
+    getColor($color-prim) $point,
+    getColor($color-second) $point
+  );
+}

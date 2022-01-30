@@ -1,30 +1,18 @@
 .gallery__section {
   padding-bottom: 80px;
 
-  background-image: linear-gradient(
-    to bottom,
-    getColor('background-secondary') 23%,
-    getColor('background-primary') 23%
-  );
+  @include colorStopeedGradient(23%, 'background-secondary', 'background-primary');
 
   @include respondTo(tablet) {
     padding-bottom: 121px;
 
-    background-image: linear-gradient(
-      to bottom,
-      getColor('background-secondary') 26%,
-      getColor('background-primary') 26%
-    );
+    @include colorStopeedGradient(26%, 'background-secondary', 'background-primary');
   }
 
   @include respondTo(desktop) {
     padding-bottom: 123px;
 
-    background-image: linear-gradient(
-      to bottom,
-      getColor('background-secondary') 29%,
-      getColor('background-primary') 29%
-    );
+    @include colorStopeedGradient(29%, 'background-secondary', 'background-primary');
   }
 }
 
