@@ -2,7 +2,7 @@
   padding-left: 20px;
   padding-right: 20px;
 
-  @media screen and (min-width: $mobile) {
+  @include respondTo(mobile) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -10,12 +10,26 @@
 
 .section__title {
   font-family: $fontSecondary;
-  font-size: 58px;
-
-  line-height: 1.14;
+  font-size: 34px;
+  line-height: 1.145;
   text-align: center;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 
   color: getColor('accent');
+
+  @include respondTo(tablet) {
+    font-size: 48px;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 58px;
+    letter-spacing: 0.06em;
+  }
+
+  &--hidden {
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
 }
