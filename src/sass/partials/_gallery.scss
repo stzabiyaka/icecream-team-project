@@ -3,24 +3,47 @@
 
   background-image: linear-gradient(
     to bottom,
-    getColor('background-secondary') 31.3%,
-    getColor('background-primary') 31.3%
+    getColor('background-secondary') 23%,
+    getColor('background-primary') 23%
   );
 
   @include respondTo(tablet) {
     padding-bottom: 121px;
+
+    background-image: linear-gradient(
+      to bottom,
+      getColor('background-secondary') 26%,
+      getColor('background-primary') 26%
+    );
   }
 
   @include respondTo(desktop) {
     padding-bottom: 123px;
+
+    background-image: linear-gradient(
+      to bottom,
+      getColor('background-secondary') 29%,
+      getColor('background-primary') 29%
+    );
   }
 }
 
 .gallery {
   display: grid;
-  grid-gap: 6px;
+
   justify-content: center;
-  grid: repeat(6, 66px) / repeat(14, 66px);
+  grid-gap: 2px;
+  grid: repeat(6, 19px) / repeat(14, 19px);
+
+  @include respondTo(tablet) {
+    grid-gap: 4px;
+    grid: repeat(6, 40px) / repeat(14, 40px);
+  }
+
+  @include respondTo(desktop) {
+    grid-gap: 6px;
+    grid: repeat(6, 66px) / repeat(14, 66px);
+  }
 }
 
 .gallery__item {
