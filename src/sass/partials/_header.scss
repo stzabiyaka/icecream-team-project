@@ -1,0 +1,179 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  padding-top: 37px;
+
+  overflow: hidden;
+
+  background-color: getColor('background-hero');
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-family: $fontSecondary;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 0.9;
+  text-transform: uppercase;
+
+  color: getColor('accent');
+
+  text-decoration: none;
+
+  &::before {
+    content: '';
+    background-image: url(../images/hero-header/logo.svg);
+
+    width: 50px;
+    height: 50px;
+    margin-right: 18px;
+
+    @include respondTo(desktop) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(-135%, -25%);
+    }
+  }
+}
+
+.nav {
+  @include respondTo(-desktop) {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100vh;
+
+    padding: 10px 0;
+
+    transform: translateX(100%);
+
+    background-color: getColor('background-mobile-menu');
+
+    box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  @include respondTo(-mobile) {
+    width: 250px;
+  }
+
+  @include respondTo(mobile-desktop) {
+    width: 55%;
+  }
+
+  @include respondTo(desktop) {
+    display: inline-block;
+    width: 521px;
+  }
+}
+
+.nav-list {
+  @include respondTo(desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.nav-list__item {
+  @include respondTo(-desktop) {
+    display: flex;
+    align-items: center;
+    height: 42px;
+
+    padding-left: 24px;
+
+    &:nth-child(2n + 1) {
+      border-top: 1px solid #e18298;
+      border-bottom: 1px solid #e18298;
+    }
+  }
+}
+
+.nav-list__link {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.29;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  @include cssTransition(color);
+
+  &:hover,
+  &:focus {
+    color: getColor('accent');
+  }
+
+  @include respondTo(desktop) {
+    font-size: 16px;
+    line-height: 1.31;
+  }
+}
+
+.button-box {
+  display: flex;
+}
+
+.header__button {
+  &--only-desktop {
+    margin-left: 15px;
+
+    @include respondTo(-tablet) {
+      display: none;
+    }
+  }
+
+  &--no-desktop {
+    @include respondTo(desktop) {
+      display: none;
+    }
+  }
+
+  &--close,
+  &--open {
+    padding: 0;
+
+    width: 44px;
+
+    background-color: transparent;
+  }
+
+  &--open {
+    stroke: getColor('accent');
+  }
+
+  &--close {
+    margin: 0 10px 10px auto;
+
+    stroke: #ffffff;
+
+    @include cssTransition(stroke);
+
+    &:hover,
+    &:focus {
+      stroke: getColor('accent');
+    }
+  }
+
+  &--submit {
+    margin: 0 auto 20px;
+  }
+}

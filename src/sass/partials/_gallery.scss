@@ -3,37 +3,109 @@
 
   background-image: linear-gradient(
     to bottom,
-    getColor('background-secondary') 31.3%,
-    getColor('background-primary') 31.3%
+    getColor('background-secondary') 23%,
+    getColor('background-primary') 23%
   );
 
   @include respondTo(tablet) {
     padding-bottom: 121px;
+
+    background-image: linear-gradient(
+      to bottom,
+      getColor('background-secondary') 26%,
+      getColor('background-primary') 26%
+    );
   }
 
   @include respondTo(desktop) {
     padding-bottom: 123px;
+
+    background-image: linear-gradient(
+      to bottom,
+      getColor('background-secondary') 29%,
+      getColor('background-primary') 29%
+    );
   }
 }
 
 .gallery {
-  display: flex;
+  display: grid;
+
+  justify-content: center;
+  grid-gap: 2px;
+  grid: repeat(6, 19px) / repeat(14, 19px);
+
+  @include respondTo(tablet) {
+    grid-gap: 4px;
+    grid: repeat(6, 40px) / repeat(14, 40px);
+  }
+
+  @include respondTo(desktop) {
+    grid-gap: 6px;
+    grid: repeat(6, 66px) / repeat(14, 66px);
+  }
 }
 
 .gallery__item {
   display: block;
-  width: 40px;
-  height: 40px;
-  border: 2px solid getColor('text-label');
-  border-radius: 10px;
 
-  @include respondTo(tablet) {
-    flex-basis: 84px;
-    height: 84px;
+  background-color: getColor('background-secondary');
+  border-radius: 10%;
+  overflow: hidden;
+
+  &:nth-child(1) {
+    grid-area: 3 / 1 / span 2 / span 2;
+  }
+  &:nth-child(2) {
+    grid-area: 2 / 3 / span 2 / span 2;
+  }
+  &:nth-child(3) {
+    grid-area: 4 / 3 / span 2 / span 2;
+  }
+  &:nth-child(4) {
+    border-radius: 5%;
+    grid-area: 1 / 5 / span 4 / span 4;
+  }
+  &:nth-child(5) {
+    grid-area: 5 / 5 / span 2 / span 2;
+  }
+  &:nth-child(6) {
+    grid-area: 2 / 9 / span 2 / span 2;
+  }
+  &:nth-child(7) {
+    grid-area: 4 / 9 / span 2 / span 2;
+  }
+  &:nth-child(8) {
+    grid-area: 1 / 11 / span 2 / span 2;
+  }
+  &:nth-child(9) {
+    grid-area: 3 / 11 / span 2 / span 2;
+  }
+  &:nth-child(10) {
+    grid-area: 3 / 13 / span 2 / span 2;
   }
 
-  @include respondTo(desktop) {
-    flex-basis: 138px;
-    height: 138px;
+  // @include respondTo(tablet) {
+  //   max-width: 50px;
+  // }
+
+  // @include respondTo(desktop) {
+  //   max-width: 80px;
+  // }
+
+  @include cssTransition(filter border-radius);
+
+  &:hover {
+    border-radius: 50%;
+    box-shadow: 0px 2px 10px rgba(212, 20, 67, 0.3);
+  }
+}
+
+.gallery__image {
+  @include cssTransition(filter scale);
+
+  .gallery__item:hover & {
+    filter: brightness(120%) saturate(50%);
+    transform: scale(120%);
   }
 }

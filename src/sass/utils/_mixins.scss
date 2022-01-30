@@ -36,3 +36,13 @@
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}" + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+//  product background colorize
+@mixin colorize($product-background, $baseSelector) {
+  @each $color in $product-background {
+    $idx: index($product-background, $color);
+    #{$baseSelector}:nth-child(#{$idx}) {
+      background-color: #{$color};
+    }
+  }
+}

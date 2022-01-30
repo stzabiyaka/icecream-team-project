@@ -1,0 +1,155 @@
+.about {
+  background-color: getColor('background-secondary');
+  padding: 125px 20px 39px 20px;
+}
+
+.label-text {
+  font-family: Titan One;
+  font-size: 18px;
+  line-height: 1.1em;
+  margin-bottom: 15px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: getColor('text-label');
+}
+
+.about-title {
+  margin-bottom: 26px;
+}
+
+.about-content {
+  display: block;
+
+  &__image {
+    margin-bottom: 46px;
+  }
+
+  &__text {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+
+.about-image {
+  width: 100%;
+}
+
+.sup-text {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+
+  color: getColor('text-secondary');
+}
+
+.subtext {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5em;
+  margin-bottom: 40px;
+
+  color: getColor('text-primary');
+}
+
+.button {
+  display: inline-flex;
+}
+
+@include respondTo(tablet) {
+  .about {
+    padding: 130px 39px 66px 39px;
+  }
+
+  .label-text {
+    font-size: 26px;
+  }
+
+  .about-title {
+    margin-bottom: 50px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      margin-top: -130px;
+      margin-bottom: 0;
+      width: 340px;
+      height: auto;
+      margin-right: 17px;
+    }
+
+    &__text {
+      margin-top: 50px;
+      margin-right: 0;
+      margin-left: 0;
+      width: 340px;
+      height: auto;
+    }
+  }
+
+  .sup-text {
+    font-size: 14px;
+    line-height: 1.8em;
+    margin-bottom: 42px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+    line-height: 1.8em;
+    margin-bottom: 62px;
+  }
+}
+
+@include respondTo(desktop) {
+  .about {
+    padding: 125px 112px 39px 112px;
+  }
+
+  .label-text {
+    font-size: 30px;
+  }
+
+  .about-title {
+    margin-bottom: 55px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__image {
+      width: 516px;
+      margin-right: 74px;
+      margin-top: 0;
+    }
+
+    &__text {
+      margin-top: 51;
+      margin-right: 0;
+      margin-left: 0;
+      width: 500px;
+    }
+  }
+
+  .sup-text {
+    font-size: 16px;
+    line-height: 1.8em;
+    margin-bottom: 35px;
+  }
+
+  .sub-text {
+    line-height: 1.9em;
+    margin-bottom: 45px;
+  }
+}
