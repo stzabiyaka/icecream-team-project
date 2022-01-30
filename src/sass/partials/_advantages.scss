@@ -14,13 +14,13 @@
     padding-right: 115px;
     padding-bottom: 139px;
   }
+  background-color: getColor('bakground-secondary');
 }
 
 .container__advantages {
   margin-right: auto;
   margin-left: auto;
   max-width: 1280px;
-  background-color: getColor('bakground-secondary');
 }
 
 .advantages__list {
