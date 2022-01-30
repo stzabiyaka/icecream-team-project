@@ -140,8 +140,19 @@
     height: 85px;
   }
   position: absolute;
-  top: -45%;
-  left: 47%;
+  top: -104px;
+  left: 184px;
+  @include respondTo(tablet) {
+    position: absolute;
+    top: -109px;
+    left: 45%;
+  }
+
+  @include respondTo(desktop) {
+    position: absolute;
+    top: -45%;
+    left: 47%;
+  }
 }
 .article--sliderThird::before {
   content: '';
@@ -160,8 +171,19 @@
     height: 85px;
   }
   position: absolute;
-  top: -45%;
-  left: 47%;
+  top: -104px;
+  left: 184px;
+  @include respondTo(tablet) {
+    position: absolute;
+    top: -109px;
+    left: 45%;
+  }
+
+  @include respondTo(desktop) {
+    position: absolute;
+    top: -45%;
+    left: 47%;
+  }
 }
 .article__text::after {
   content: '...';
@@ -174,12 +196,12 @@
   color: #c7133e;
 
   position: absolute;
-  top: 182px;
-  left: 208px;
-
+  position: absolute;
+  top: 158px;
+    left: 44%;
   @include respondTo(tablet) {
     position: absolute;
-    top: 162px;
+    top: 135px;
     left: 47%;
   }
 
@@ -193,11 +215,11 @@
 .icon {
 
   position: absolute;
-  top: 309px;
-  left: 196px;
+  top: 280px;
+  left: 172px;
   @include respondTo(tablet) {
     position: absolute;
-    top: 273px;
+    top: 244px;
     left: 348px;
   }
 
