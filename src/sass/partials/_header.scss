@@ -36,20 +36,11 @@
 
   &::before {
     content: '';
-    background-image: url(../images/icon-logo.png);
+    background-image: url(../images/hero-header/logo.svg);
 
     width: 50px;
     height: 50px;
     margin-right: 18px;
-
-    border-radius: 50%;
-    background-size: contain;
-
-    @media screen and (min-devise-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url(../images/icon-logo@2x.png);
-    }
 
     @include respondTo(desktop) {
       position: absolute;
