@@ -1,12 +1,20 @@
 .modal-window__backdrop {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: getColor('backdrop');    
     position: fixed;
     top: 0;
     left: 0;
     opacity: 1;   
     z-index: 10;  
+    visibility: visible;
+pointer-events: auto;
+
+&.is-hidden {
+visibility: hidden;
+pointer-events: none;
+opacity: 0;
+}
   }
 
   .modal-window__backdrop-bg--circle{
@@ -108,11 +116,7 @@
 
   }
 
-//   .modal-window.is-hidden {
-//     visibility: hidden;
-//     opacity: 0;
-//     pointer-events: none;
-//   }
+
 .modal-window__close-btn{
     position: fixed;
     width: 20px;
