@@ -1,0 +1,256 @@
+.modal-window__backdrop {
+    width: 100vw;
+    height: 100vh;
+    background-color: getColor('backdrop');    
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 1;   
+    z-index: 10;  
+    visibility: visible;
+pointer-events: auto;
+
+&.is-hidden {
+visibility: hidden;
+pointer-events: none;
+opacity: 0;
+}
+  }
+
+  .modal-window__backdrop-bg--circle{
+      display: none;
+
+    @include respondTo(tablet) {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 700px;
+          height: 700px;
+          display: block;
+          background-color: getColor('text-label');          
+          border-radius: 50%;
+        }
+
+    @include respondTo(desktop) {
+        width: 1000px;
+        height: 1000px;
+    }
+  }
+.modal-window__backdrop-bg--image{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/modal-window/icecream-hero_mobile.png);    
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(../images/modal-window/icecream-hero_mobile@2x.png);
+    
+}
+@include respondTo(tablet) {
+    width: 70vw;
+    background-image: url(../images/modal-window/icecream-hero_tablet.png);
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image:url(../images/modal-window/icecream-hero_tablet@2x.png);
+    
+    }
+  }
+
+  @include respondTo(desktop) {
+      width: 50vw;
+    background-image: url(../images/modal-window/icecream-hero_pc.png);
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image:url(../images/modal-window/icecream-hero_pc@2x.png);
+   
+    }
+  }
+}
+
+.modal-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-y: scroll;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+     
+    @include respondTo(tablet) {
+        width: 60%;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        padding-left: 34px;
+        padding-right: 34px;
+        height: 90%;
+    }
+    
+@include respondTo(desktop){
+    padding-top: 80px;
+    padding-bottom: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 50%;
+}
+
+  }
+
+
+.modal-window__close-btn{
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid getColor('accent');
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+    &:hover,
+    &:focus{
+        background-color: getColor('accent');
+    }
+
+    @include respondTo(tablet){
+        top: 30px;        
+        right: 0;
+        width: 30px;
+        height: 30px;
+        border: 2px solid getColor('accent');
+    }
+
+    @include respondTo(desktop){
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.modal-window__close-btn-icon{
+    width: 20px;
+    height: 20px;
+    
+}
+
+.modal-window__close-btn-icon{
+    fill: getColor('accent');
+}
+
+.modal-window__close-btn:hover .modal-window__close-btn-icon,
+.modal-window__close-btn:focus .modal-window__close-btn-icon{
+    fill: getColor('background-primary');  
+}
+
+.modal-form{
+    width: 100%;
+}
+
+.modal-form__container{
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+
+    &:not(:last-child){
+        margin-bottom: 10px;
+    }
+
+    &--option{
+        flex-direction: column;
+    }
+}
+
+
+.modal-form__field{    
+    font-family: $fontSecondary;
+    font-size: 18px;
+    line-height: calc(21/18);
+    color: getColor('accent');
+
+    @include respondTo(tablet){
+        font-size: 26px;
+        line-height: calc(30/26);
+    }
+
+    @include respondTo(desktop){
+        font-size: 30px;
+        line-height: calc(34/30);
+    }
+}
+
+.modal-form__input-icon{
+    position: absolute;
+    bottom: 2px;
+    left: 4px;
+    fill: getColor('accent');
+}
+
+.modal-form__input{
+    border: 1px solid getColor('accent');
+    border-radius: 4px;
+    background-color: getColor('background-primary');
+    padding-left: 26px;
+    color: getColor('accent');
+    font-family:  $fontPrimary;
+    font-size: 14px;
+    line-height: calc(21/14);
+    letter-spacing: 0.04em;
+    cursor: pointer;
+
+    &--select{
+        padding-left: 26px;
+        padding-right: 2px;
+        padding-top: 1px;
+        padding-bottom: 1px;
+
+    }
+}
+
+.modal-form__message{
+    width: 100%;
+    height: 120px;
+    align-self: center;
+    resize: none;  
+    border: 1px solid getColor('accent');
+    border-radius: 4px;
+    background-color: getColor('background-primary');
+    color: getColor('accent');
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: calc(21/14);
+    letter-spacing: 0.04em;    
+    cursor: pointer;
+
+    &::placeholder{
+        color: getColor('accent');
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+    line-height: calc(21/14);
+    letter-spacing: 0.04em;    
+    }
+}
+
