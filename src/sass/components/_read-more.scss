@@ -1,24 +1,33 @@
 .read-more {
-  max-width: 176px;
+  // max-width: 176px;
+  width: fit-content;
 }
 .extra-content {
   display: none;
 
-  #read-more:checked ~ & {
+  &.is-open {
     display: block;
   }
-}
 
-.more {
-  #read-more:checked ~ & {
-    display: none;
-  }
-}
+  //   #read-more:checked ~ & {
+  //     display: block;
+  //   }
+  // }
 
-.less {
-  display: none;
+  // .more {
+  //   display: inline-block;
+  //   font-size: inherit;
 
-  #read-more:checked ~ & {
-    display: inline-block;
-  }
+  //   #read-more:checked ~ .read-more & {
+  //     display: none;
+  //   }
+  // }
+
+  // .less {
+  //   display: none;
+  //   font-size: inherit;
+
+  //   #read-more:checked ~ .read-more & {
+  //     display: inline-block;
+  //   }
 }

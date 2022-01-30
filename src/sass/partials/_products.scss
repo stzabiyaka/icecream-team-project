@@ -1,0 +1,362 @@
+.products.section {
+  padding-top: 121px;
+  padding-bottom: 98px;
+
+  @include respondTo(tablet) {
+    padding-top: 122px;
+    padding-bottom: 112px;
+  }
+
+  @include respondTo(desktop) {
+    padding-top: 127px;
+    padding-bottom: 119px;
+  }
+}
+
+.products__label {
+  font-family: $fontSecondary;
+  font-size: 18px;
+  line-height: 1.16;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+
+  color: getColor('text-label');
+
+  @include respondTo(tablet) {
+    font-size: 26px;
+    line-height: 1.15;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 30px;
+    line-height: 1.13;
+    letter-spacing: 0.04em;
+  }
+}
+.products-title {
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 31px;
+
+  @include respondTo(tablet) {
+    font-size: 48px;
+    line-height: 1.14;
+    margin-bottom: 39px;
+  }
+
+  @include respondTo(desktop) {
+    font-size: 58px;
+    line-height: 1.13;
+    letter-spacing: 0.06em;
+    margin-bottom: 49px;
+  }
+}
+.products-list {
+  font-family: $fontPrimary;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.52;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: getColor('background-primary');
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @include respondTo(tablet) {
+    line-height: 1.76;
+    flex-direction: row;
+  }
+  @include respondTo(desktop) {
+    font-size: 16px;
+  }
+
+  &__item {
+    max-width: 280px;
+    border-radius: 24px;
+    padding: 41px;
+    padding-top: 161px;
+    margin-bottom: 17px;
+    margin-top: 120px;
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include respondTo(tablet) {
+      max-width: 220px;
+      padding: 40px 25px;
+      padding-top: 152px;
+      margin-bottom: 0;
+      @include flexBasis(3, 20px);
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+    @include respondTo(desktop) {
+      max-width: 335px;
+      padding: 50px 44px;
+      padding-top: 193px;
+      margin-top: 160px;
+
+      @include flexBasis(3, 30px);
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  $product-background: '#FFB8CA', '#F0D1A5', '#C2E297';
+
+  @include colorize($product-background, '.products-list__item');
+
+  &__name {
+    font-family: $fontSecondary;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 66px;
+
+    &::after {
+      content: '...';
+      position: absolute;
+      left: 50%;
+      top: 50px;
+      transform: translate(-50%, -50%);
+    }
+
+    @include respondTo(desktop) {
+      font-size: 30px;
+      line-height: 1.13;
+      margin-bottom: 70px;
+    }
+  }
+  &__description {
+    text-align: center;
+    margin-bottom: 25px;
+    @include respondTo(tablet) {
+      margin-bottom: 35px;
+    }
+    @include respondTo(desktop) {
+      margin-bottom: 57px;
+    }
+  }
+}
+.products-list__description {
+  text-align: center;
+}
+.read-more {
+  padding: 0px;
+  width: 40px;
+  height: 40px;
+
+  &:hover,
+  &:focus {
+    background-color: getColor('background-primary');
+    transform: scale(120%);
+    .button__icon-arrow {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+
+.button__icon-arrow {
+  width: 12px;
+  height: 12px;
+  fill: getColor('accent');
+}
+.icecream::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: url(../images/products/product-icecream_mobile.png);
+}
+.icecoffee::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: url(../images/products/product-icecoffee_mobile.png);
+}
+.milkshake::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: url(../images/products/product-milkshake_mobile.png);
+}
+@include respondTo(mobile) {
+  .milkshake::before {
+    content: url(../images/products/product-milkshake_mobile.png);
+  }
+  .icecoffee::before {
+    content: url(../images/products/product-icecoffee_mobile.png);
+  }
+  .icecream::before {
+    content: url(../images/products/product-icecream_mobile.png);
+  }
+}
+@include respondTo(tablet) {
+  .milkshake::before {
+    content: url(../images/products/product-milkshake_tablet.png);
+  }
+  .icecoffee::before {
+    content: url(../images/products/product-icecoffee_tablet.png);
+  }
+  .icecream::before {
+    content: url(../images/products/product-icecream_tablet.png);
+  }
+}
+@include respondTo(desktop) {
+  .milkshake::before {
+    content: url(../images/products/product-milkshake_pc.png);
+  }
+  .icecoffee::before {
+    content: url(../images/products/product-icecoffee_pc.png);
+  }
+  .icecream::before {
+    content: url(../images/products/product-icecream_pc.png);
+  }
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  @include respondTo(mobile) {
+    .milkshake::before {
+      content: url(../images/products/product-milkshake_mobile@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -255px;
+      left: -39%;
+    }
+    .icecoffee::before {
+      content: url(../images/products/product-icecoffee_mobile@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -255px;
+      left: -39%;
+    }
+    .icecream::before {
+      content: url(../images/products/product-icecream_mobile@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -255px;
+      left: -39%;
+    }
+  }
+}
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  @include respondTo(tablet) {
+    .milkshake::before {
+      content: url(../images/products/product-milkshake_tablet@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      left: -51%;
+      bottom: 180px;
+    }
+    .icecoffee::before {
+      content: url(../images/products/product-icecoffee_tablet@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      left: -51%;
+      bottom: 200px;
+    }
+    .icecream::before {
+      content: url(../images/products/product-icecream_tablet@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      left: -51%;
+      bottom: 190px;
+    }
+  }
+}
+
+@media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  @include respondTo(desktop) {
+    .milkshake::before {
+      content: url(../images/products/product-milkshake_pc@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -60%;
+      left: -51%;
+    }
+    .icecoffee::before {
+      content: url(../images/products/product-icecoffee_pc@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -60%;
+      left: -51%;
+    }
+    .icecream::before {
+      content: url(../images/products/product-icecream_pc@2x.png);
+      transform: scaleX(50%) scaleY(50%);
+      top: -60%;
+      left: -51%;
+    }
+  }
+}
+
+// =====read more====
+.read-more-state {
+  display: none;
+}
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: $transitionDuration $transitionTiming;
+}
+.read-more-state:checked ~ .products-list__description .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+.read-more-state:checked ~ .read-more {
+  transform: rotate(-90deg) scale(120%);
+}
+
+// =====================header animation===================
+.products__label span {
+  display: inline-block;
+  animation: wave-text 2s ease-in-out infinite;
+}
+
+.products__label {
+  span:nth-of-type(2) {
+    animation-delay: 0.1s;
+  }
+  span:nth-of-type(3) {
+    animation-delay: 0.2s;
+  }
+  span:nth-of-type(4) {
+    animation-delay: 0.3s;
+  }
+  span:nth-of-type(5) {
+    animation-delay: 0.4s;
+  }
+  span:nth-of-type(6) {
+    animation-delay: 0.5s;
+  }
+  span:nth-of-type(7) {
+    animation-delay: 0.6s;
+  }
+  span:nth-of-type(8) {
+    animation-delay: 0.7s;
+  }
+  span:nth-of-type(9) {
+    animation-delay: 0.8s;
+  }
+  span:nth-of-type(10) {
+    animation-delay: 0.9s;
+  }
+  span:nth-of-type(11) {
+    animation-delay: 1s;
+  }
+}
+
+@keyframes wave-text {
+  00% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}

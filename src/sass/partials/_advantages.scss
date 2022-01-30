@@ -1,0 +1,120 @@
+.advantages {
+  padding-bottom: 97px;
+
+  @include respondTo(tablet) {
+    padding-bottom: 140px;
+  }
+  @include respondTo(desktop) {
+    padding-bottom: 139px;
+  }
+  background-color: getColor('background-secondary');
+}
+
+.advantages__list {
+  @include respondTo(tablet) {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.advantages__item {
+  @include respondTo(-tablet) {
+    margin-bottom: 38px;
+    max-width: 230px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include respondTo(tablet) {
+    margin-right: 60px;
+    max-width: 180px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  @include respondTo(desktop) {
+    @include flexBasis(3, 30px);
+    margin-right: 30px;
+
+    max-width: 330px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+.advantages__heading_bucket {
+  margin-bottom: 16px;
+  font-size: 36px;
+  line-height: 1.13;
+  letter-spacing: 0.04em;
+
+  @include respondTo(tablet) {
+    font-size: 48px;
+    margin-bottom: 13px;
+  }
+  @include respondTo(desktop) {
+    font-size: 58px;
+    margin-bottom: 15px;
+  }
+
+  font-family: $fontSecondary;
+  color: getColor('accent');
+
+  &::before {
+    content: '';
+    margin-bottom: 16px;
+    background-image: url('/images/advantages/bucket.svg');
+    width: 33px;
+    height: 50px;
+    display: block;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include respondTo(tablet) {
+      margin-bottom: 36px;
+    }
+    @include respondTo(tablet) {
+      margin-bottom: 40px;
+    }
+  }
+  &--appls {
+    &::before {
+      background-image: url('/images/advantages/appls.svg');
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &--heart {
+    &::before {
+      background-image: url('/images/advantages/heart.svg');
+      width: 44px;
+      height: 50px;
+    }
+  }
+}
+
+.advantages__article {
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.7;
+  font-family: $fontPrimary;
+  font-weight: 700;
+  color: getColor('text-secondary');
+
+  @include respondTo(mobile-desktop) {
+    font-size: 14px;
+    line-height: 1.74;
+    margin-top: 10px;
+  }
+  @include respondTo(desktop) {
+    font-size: 16px;
+    line-height: 1.76;
+  }
+}

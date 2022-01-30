@@ -1,0 +1,258 @@
+.about {
+  background-color: getColor('background-secondary');
+  padding: 125px 0 39px 0;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/about/milk-left-mobile.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 78%;
+    left: 0;
+    z-index: -1;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/about/milk-left-mobile@2x.png');
+      background-size: 10%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url('../images/about/milk-right-mobile.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 78%;
+    right: 0;
+    max-width: 4em;
+    z-index: -1;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/about/milk-right-mobile@2x.png');
+      background-size: 100%;
+    }
+  }
+}
+
+.label-text {
+  font-family: $fontSecondary;
+  font-size: 18px;
+  line-height: 1.1;
+  margin-bottom: 15px;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  color: getColor('text-label');
+}
+
+.about-title {
+  margin-bottom: 26px;
+}
+
+.about-content {
+  display: block;
+
+  &__image {
+    margin-bottom: 46px;
+  }
+
+  &__text {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+}
+
+.about-image {
+  width: 100%;
+}
+
+.sup-text {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+
+  color: getColor('text-secondary');
+}
+
+.sub-text {
+  font-family: $fontPrimary;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+
+  color: getColor('text-primary');
+
+  &--color {
+    color: getColor('accent');
+  }
+}
+
+@include respondTo(tablet) {
+  .about {
+    padding: 130px 0 66px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .label-text {
+    font-size: 26px;
+  }
+
+  .about-title {
+    margin-bottom: 50px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__image {
+      margin-top: -130px;
+      margin-bottom: 0;
+      width: 340px;
+      height: auto;
+      margin-right: 17px;
+    }
+
+    &__text {
+      margin-top: 50px;
+      margin-right: 0;
+      margin-left: 0;
+      width: 340px;
+      height: auto;
+    }
+  }
+
+  .sup-text {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 42px;
+  }
+
+  .sub-text {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+}
+
+@include respondTo(desktop) {
+  .about {
+    padding: 125px 0 39px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      background-image: url('../images/about/milk-left-desktop.png');
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      top: 45%;
+      left: 0;
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../images/about/milk-left-desktop@2x.png');
+      }
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      background-image: url('../images/about/milk-right-desktop.png');
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      top: 45%;
+      right: 0;
+      max-width: 16em;
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../images/about/milk-right-desktop@2x.png');
+      }
+    }
+  }
+
+  .label-text {
+    font-size: 30px;
+  }
+
+  .about-title {
+    margin-bottom: 55px;
+  }
+
+  .about-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    &__image {
+      width: 516px;
+      margin-right: 74px;
+      margin-top: 0;
+    }
+
+    &__text {
+      margin-top: 51;
+      margin-right: 0;
+      margin-left: 0;
+      width: 500px;
+    }
+  }
+
+  .sup-text {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+  }
+
+  .sub-text {
+    line-height: 1.9;
+    margin-bottom: 15px;
+  }
+}
+
+// ==============================================
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: $transitionDuration $transitionTiming;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.button-about {
+  display: inline-flex;
+}

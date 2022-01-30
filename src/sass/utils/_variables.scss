@@ -63,4 +63,4 @@ $breakpoints: (
   #{and} (
     max-width: #{$desktop - 1},
   ),
-) 
+) !default;
