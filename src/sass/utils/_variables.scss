@@ -10,8 +10,10 @@ $colors: (
   'text-label': #ffa5ba,
   'accent': #d41443,
   'background-primary': #ffffff,
-  'bakground-secondary': #fff5f6,
+  'background-secondary': #fff5f6,
   'background-hero': #ffb8ca,
+  'background-mobile-menu': #e17992,
+  'backdrop': rgba(225, 121, 146, 0.5),
   'icon': #fea5bb,
 );
 
@@ -22,3 +24,43 @@ $fontSecondary: 'Titan One', cursive;
 // transitions duration and timing
 $transitionDuration: 300ms;
 $transitionTiming: cubic-bezier(0.4, 0, 0.2, 1);
+
+// breakpoints map for respondTo() mixin
+$breakpoints: (
+  'mobile': (
+    min-width: #{$mobile},
+  ),
+  'tablet': (
+    min-width: #{$tablet},
+  ),
+  'desktop': (
+    min-width: #{$desktop},
+  ),
+  '-mobile': (
+    max-width: #{$mobile - 1},
+  ),
+  '-tablet': (
+    max-width: #{$tablet - 1},
+  ),
+  '-desktop': (
+    max-width: #{$desktop - 1},
+  ),
+  'mobile-tablet': (
+    min-width: #{$mobile},
+  )
+  #{and} (
+    max-width: #{$tablet - 1},
+  ),
+  'mobile-desktop': (
+    min-width: #{$mobile},
+  )
+  #{and} (
+    max-width: #{$desktop - 1},
+  ),
+  'tablet-desktop': (
+    min-width: #{$tablet},
+  )
+  #{and} (
+    max-width: #{$desktop - 1},
+  ),
+) 
