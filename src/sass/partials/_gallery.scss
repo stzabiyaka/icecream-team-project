@@ -17,32 +17,57 @@
 }
 
 .gallery {
-  display: flex;
+  display: grid;
+  grid-gap: 6px;
   justify-content: center;
+  grid: repeat(6, 69px) / repeat(14, 69px);
 }
 
 .gallery__item {
   display: block;
-  @include flexBasis(11, 5px);
-  max-width: 30px;
 
+  background-color: getColor('background-secondary');
   border-radius: 15%;
   overflow: hidden;
 
-  &:not(:last-child) {
-    margin-right: 5px;
+  &:nth-child(1) {
+    grid-area: 3 / 1 / span 2 / span 2;
   }
-
+  &:nth-child(2) {
+    grid-area: 2 / 3 / span 2 / span 2;
+  }
+  &:nth-child(3) {
+    grid-area: 4 / 3 / span 2 / span 2;
+  }
   &:nth-child(4) {
-    flex: 2;
+    grid-area: 1 / 5 / span 4 / span 4;
   }
-  @include respondTo(tablet) {
-    max-width: 50px;
+  &:nth-child(5) {
+    grid-area: 5 / 5 / span 2 / span 2;
+  }
+  &:nth-child(6) {
+    grid-area: 2 / 9 / span 2 / span 2;
+  }
+  &:nth-child(7) {
+    grid-area: 4 / 9 / span 2 / span 2;
+  }
+  &:nth-child(8) {
+    grid-area: 1 / 11 / span 2 / span 2;
+  }
+  &:nth-child(9) {
+    grid-area: 3 / 11 / span 2 / span 2;
+  }
+  &:nth-child(10) {
+    grid-area: 3 / 13 / span 2 / span 2;
   }
 
-  @include respondTo(desktop) {
-    max-width: 80px;
-  }
+  // @include respondTo(tablet) {
+  //   max-width: 50px;
+  // }
+
+  // @include respondTo(desktop) {
+  //   max-width: 80px;
+  // }
 
   @include cssTransition(filter border-radius);
 
