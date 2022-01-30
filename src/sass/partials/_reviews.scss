@@ -8,9 +8,6 @@
     text-align: center;
 
     color: getColor('text-secondary');
-    background-color: #fafafa;
-
-    z-index: 4;
 
     font-size: 12px;
     line-height: 2.55;
@@ -22,18 +19,16 @@
     @include respondTo(tablet) {
       font-size: 16px;
       line-height: 1.86;
-
       letter-spacing: 0.04em;
       padding: 47px 39px;
       padding-right: 89px;
       padding-left: 87px;
     }
+
     @include respondTo(desktop) {
       font-size: 16px;
       line-height: 1.86;
-
       letter-spacing: 0.04em;
-
       padding: 47px 39px;
       padding-right: 89px;
       padding-left: 87px;
@@ -53,7 +48,7 @@
 
     text-align: center;
     color: getColor('text-secondary');
-    margin-top: 52px;
+
     margin-bottom: 30px;
 
     @include respondTo(tablet) {
@@ -61,14 +56,10 @@
       font-size: 16px;
 
       margin-bottom: 35px;
-      margin-top: 34px;
     }
     @include respondTo(desktop) {
       height: 31px;
       font-size: 20px;
-
-      // margin-bottom: 35px;
-      // margin-top: 34px;
     }
   }
   &__icon {
@@ -86,156 +77,104 @@
   }
 }
 
+.article__background {
+  position: relative;
+  margin-bottom: 15px;
+  background: #fafafa;
+  z-index: 1;
+  &::before {
+    z-index: -1;
+    content: '';
+    background: url(../images/reviewsImages/mark1.jpg);
+    position: absolute;
+    left: 61px;
+    top: 28px;
+    width: 54px;
+    height: 40px;
+
+    @include respondTo(tablet) {
+      left: 50px;
+      top: 32px;
+  
+    }
+  }
+  &::after {
+    content: '...';
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 13px;
+    display: block;
+    color: #c7133e;
+    background-color: getColor('background-primary');
+  }
+}
 .article::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg5.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 85px;
   height: 85px;
   overflow: hidden;
   border-radius: 50%;
+  position: absolute;
+  top: -45%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg5x.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
   }
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  @include respondTo(tablet) {
-    position: absolute;
+  @include respondTo(tablet){
     top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
-
-  @include respondTo(desktop) {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
   }
 }
 
 .article--sliderSecond::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 85px;
   height: 85px;
   overflow: hidden;
   border-radius: 50%;
+  position: absolute;
+  top: -55%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg2x.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
   }
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  @include respondTo(tablet) {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-  }
-
-  @include respondTo(desktop) {
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
+  @include respondTo(tablet){
+    top: -60%;
   }
 }
 .article--sliderThird::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg3.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 85px;
   height: 85px;
   overflow: hidden;
   border-radius: 50%;
+  position: absolute;
+  top: -55%;
+  left: 50%;
+  transform: translate(-50%, 50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg4x.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-
-    position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    @include respondTo(tablet) {
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-    }
-
-    @include respondTo(desktop) {
-      position: absolute;
-      top: -50%;
-      left: 50%;
-      transform: translate(-50%, 50%);
-    }
   }
-  // .article--background::after {
-  //   content: '...';
-
-  //   font-size: 32px;
-  //   letter-spacing: 13px;
-
-  //   width: 4px;
-  //   height: 4px;
-  //   color: #c7133e;
-
-    
-  // }
-
-  .article__text::before {
-    content: '';
-    background: url(../images/reviewsImages/mark1.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 54px;
-    height: 40px;
-
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-      content: '';
-      background: url(../images/reviewsImages/mark2x.jpg);
-      background-size: cover;
-      background-repeat: no-repeat;
-      width: 54px;
-      height: 40px;
-    }
-    position: absolute;
-    top: 23px;
-    left: 59px;
-
-    @include respondTo(tablet) {
-      position: absolute;
-      top: 28px;
-      left: 82px;
-    }
-    @include respondTo(desktop) {
-      position: absolute;
-      top: 29px;
-      left: 166px;
-    }
+  @include respondTo(tablet){
+    top: -60%;
   }
 }
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
