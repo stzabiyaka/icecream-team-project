@@ -1,64 +1,144 @@
 .footer {
-  background-color: #fff5f6;
+  height: 320px;
+  background-color: getColor('background-secondary');
+}
+.box {
+  @include respondTo(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  @include respondTo(desktop) {
+    flex-direction: column;
+  }
+}
+.title__box {
+  padding-top: 10px;
+  width: 234px;
+
+  @include respondTo(tablet) {
+    width: 340px;
+  }
+  @include respondTo(desktop) {
+    width: 100%;
+  }
 }
 .title {
-  @include respondTo(-mobile) {
+  font-family: Titan One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.16;
+  text-transform: uppercase;
+  color: getColor('text-label');
+
+  @include respondTo(tablet) {
     font-family: Titan One;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 26px;
+    line-height: 1.15;
     text-transform: uppercase;
-    color: #ffa5ba;
+    color: getColor('text-label');
   }
-  @include respondTo(-tablet) {
+  @include respondTo(desktop) {
     font-family: Titan One;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 38px;
+    line-height: 0.89;
     text-transform: uppercase;
-    color: #ffa5ba;
-  }
-  @include respondTo(-desktop) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 21px;
-    text-transform: uppercase;
-    color: #ffa5ba;
+    color: getColor('text-label');
   }
 }
 .title-with {
-  @include respondTo(-mobile) {
+  font-family: Titan One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColor('accent');
+  padding-top: 17px;
+
+  @include respondTo(tablet) {
     font-family: Titan One;
     font-style: normal;
     font-weight: normal;
-    font-size: 34px;
-    line-height: 39px;
+    font-size: 48px;
+    line-height: 1.14;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #d41443;
+    color: getColor('accent');
+    padding-top: 16px;
   }
-  @include respondTo(-tablet) {
+  @include respondTo(desktop) {
     font-family: Titan One;
     font-style: normal;
     font-weight: normal;
-    font-size: 34px;
-    line-height: 39px;
+    font-size: 58px;
+    line-height: 1.13;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #d41443;
+    color: getColor('accent');
+    padding-top: 15px;
   }
-  @include respondTo(-desktop) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 34px;
-    line-height: 39px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #d41443;
+}
+.social__box {
+  @include respondTo(tablet) {
+    margin-left: 198px;
   }
+}
+.social__media {
+  justify-content: right;
+  display: flex;
+  padding: 43px 0 46px 147px;
+
+  @include respondTo(tablet) {
+    justify-content: right;
+    display: flex;
+    padding: 0;
+  }
+}
+.media__icon2 {
+  margin: 0 28px;
+}
+.icon-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: getColor('icon');
+}
+.icon {
+  fill: #fff;
+}
+.tel__box {
+  display: flex;
+  justify-content: right;
+  @include respondTo(tablet) {
+    margin-left: 470px;
+    margin-top: -93px;
+    display: flex;
+  }
+}
+.contact__tel {
+  padding-right: 3px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 186%;
+  text-align: right;
+  color: #000000;
+}
+.tel {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 186%;
+  text-align: right;
+  color: #d41443;
 }
