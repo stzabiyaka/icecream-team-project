@@ -1,5 +1,6 @@
 .article {
   position: relative;
+  z-index: 10;
 
   &__text {
     font-family: $fontPrimary;
@@ -9,7 +10,7 @@
     color: getColor('text-secondary');
     background-color: #fafafa;
 
-    z-index: 5;
+    z-index: 4;
 
     font-size: 12px;
     line-height: 2.55;
@@ -17,7 +18,6 @@
     padding: 43px 26px;
     padding-right: 66px;
     padding-left: 57px;
-    margin-top: 19px;
 
     @include respondTo(tablet) {
       font-size: 16px;
@@ -27,8 +27,6 @@
       padding: 47px 39px;
       padding-right: 89px;
       padding-left: 87px;
-      margin-bottom: 15px;
-      margin-top: 15px;
     }
     @include respondTo(desktop) {
       font-size: 16px;
@@ -39,9 +37,6 @@
       padding: 47px 39px;
       padding-right: 89px;
       padding-left: 87px;
-
-      margin-bottom: 15px;
-      margin-top: 15px;
     }
   }
   &__contact {
@@ -98,28 +93,31 @@
   background-repeat: no-repeat;
   width: 85px;
   height: 85px;
+  overflow: hidden;
+  border-radius: 50%;
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg5x.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 85px;
-    height: 85px;
   }
   position: absolute;
-  top: -104px;
-  left: 184px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
   @include respondTo(tablet) {
     position: absolute;
-    top: -109px;
-    left: 45%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 
   @include respondTo(desktop) {
     position: absolute;
-    top: -45%;
-    left: 47%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }
 
@@ -130,28 +128,31 @@
   background-repeat: no-repeat;
   width: 85px;
   height: 85px;
+  overflow: hidden;
+  border-radius: 50%;
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg2x.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 85px;
-    height: 85px;
   }
   position: absolute;
-  top: -104px;
-  left: 184px;
+  top: -50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
   @include respondTo(tablet) {
     position: absolute;
-    top: -109px;
-    left: 45%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 
   @include respondTo(desktop) {
     position: absolute;
-    top: -45%;
-    left: 47%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
   }
 }
 .article--sliderThird::before {
@@ -161,101 +162,80 @@
   background-repeat: no-repeat;
   width: 85px;
   height: 85px;
+  overflow: hidden;
+  border-radius: 50%;
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg4x.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    width: 85px;
-    height: 85px;
-  }
-  position: absolute;
-  top: -104px;
-  left: 184px;
-  @include respondTo(tablet) {
+
     position: absolute;
-    top: -109px;
-    left: 45%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    @include respondTo(tablet) {
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+
+    @include respondTo(desktop) {
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
   }
+  // .article--background::after {
+  //   content: '...';
 
-  @include respondTo(desktop) {
-    position: absolute;
-    top: -45%;
-    left: 47%;
-  }
-}
-.article__text::after {
-  content: '...';
+  //   font-size: 32px;
+  //   letter-spacing: 13px;
 
-  font-size: 32px;
-  letter-spacing: 13px;
+  //   width: 4px;
+  //   height: 4px;
+  //   color: #c7133e;
 
-  width: 4px;
-  height: 4px;
-  color: #c7133e;
+    
+  // }
 
-  position: absolute;
-  position: absolute;
-  top: 158px;
-    left: 44%;
-  @include respondTo(tablet) {
-    position: absolute;
-    top: 135px;
-    left: 47%;
-  }
-
-  @include respondTo(desktop) {
-    position: absolute;
-    left: 48%;
-    top: 134px;
-  }
-}
-
-.icon {
-
-  position: absolute;
-  top: 280px;
-  left: 172px;
-  @include respondTo(tablet) {
-    position: absolute;
-    top: 244px;
-    left: 348px;
-  }
-
-  @include respondTo(desktop){
-    position: absolute;
-    top: 114%;
-    left: 47%;
-  }
-}
-.article__text::before {
-  content: '';
-  background: url(../images/reviewsImages/mark1.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 54px;
-  height: 40px;
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .article__text::before {
     content: '';
-    background: url(../images/reviewsImages/mark2x.jpg);
+    background: url(../images/reviewsImages/mark1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     width: 54px;
     height: 40px;
-  }
-  position: absolute;
-  top: 23px;
-  left: 59px;
 
-  @include respondTo(tablet) {
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      content: '';
+      background: url(../images/reviewsImages/mark2x.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 54px;
+      height: 40px;
+    }
     position: absolute;
-    top: 28px;
-    left: 82px;
+    top: 23px;
+    left: 59px;
+
+    @include respondTo(tablet) {
+      position: absolute;
+      top: 28px;
+      left: 82px;
+    }
+    @include respondTo(desktop) {
+      position: absolute;
+      top: 29px;
+      left: 166px;
+    }
   }
-  @include respondTo(desktop) {
-    position: absolute;
-    top: 29px;
-    left: 166px;
-  }
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
