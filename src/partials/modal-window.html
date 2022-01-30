@@ -1,16 +1,21 @@
 
-<div class="backdrop" >
-    <div class="modal-window">
+<div class="modal-window__backdrop" >
+  
+  <div class="modal-window__backdrop-bg--circle"></div>
+  <div class="modal-window__backdrop-bg--image"></div>
+     <div class="modal-window container">      
       <button type="button" class="modal-window__close-btn" data-modal-close>
-        close btn
+        <svg class="modal-window__close-btn-icon">
+          <use href="images/icons.svg#icon-cross-modal-window"></use>
+        </svg>
       </button>
-      <p class="modal-form__title">enter your order details</p>
+      <p class="modal-form__title section__title">enter order details</p>
       <form action="#" class="modal-form">
         <div class="modal-form__container">
           <input class="modal-form__input" type="text" name="user-name" id="user-name" required />
           <label class="modal-form__field" for="user-name"
             >Name<svg class="modal-form__input-icon" width="18" height="18">
-              <use href="#"></use>
+              <use href="images/icons.svg#icon-person-modal-window"></use>
               </svg
           ></label>
         </div>
@@ -23,51 +28,55 @@
             required
             pattern="[0-9]{10}"
             title="0667773388"
+            required
           />
           <label class="modal-form__field" for="tel"
             >Phone<svg class="modal-form__input-icon" width="18" height="18">
-              <use href="#"></use></svg
+              <use href="images/icons.svg#icon-phone-modal-window"></use></svg
           ></label>
         </div>
         <div class="modal-form__container">
           <input class="modal-form__input" type="email" name="user-email" id="email" required />
           <label class="modal-form__field" for="email"
             >Mail<svg class="modal-form__input-icon" width="18" height="18">
-              <use href="#"></use></svg
+              <use href="images/icons.svg#icon-email-modal-window"></use></svg
           ></label>
         </div>
-        <div class="modal-form__container">
-            <label for="product-name">Product name</label>
-<select id="product-name" name="product-name">
+        <div class="modal-form__container modal-form__container--option">
+            <label for="product-name" class="modal-form__field">Product name<svg class="modal-form__input-icon" width="18" height="18">
+              <use href="images/icons.svg#icon-ice-cream-modal-window"></use></svg></label>
+<select id="product-name" name="product-name" class="modal-form__input modal-form__input--select" required>
   <option value="cream" selected>Ice cream</option>
   <option value="coffee">Ice coffee</option>
   <option value="milk">Milkshakes</option>
 </select>
           </div>
-          <div class="modal-form__container">
-            <label for="size">Size</label>
-            <select id="size" name="size">
+          <div class="modal-form__container modal-form__container--option">
+            <label for="size" class="modal-form__field">Size<svg class="modal-form__input-icon" width="18" height="18">
+              <use href="images/icons.svg#icon-ice-cream-modal-window"></use></svg></label>
+            <select id="size" name="size" class="modal-form__input modal-form__input--select">
               <option value="xs">Extra Small</option>
               <option value="s">Small</option>
               <option value="m" selected>Medium</option>
               <option value="l">Large</option>
             </select>
           </div>
-          <div class="modal-form__container">
-            <label for="taste">Choose the taste</label>
-            <select id="taste" name="taste">
+          <div class="modal-form__container modal-form__container--option">
+            <label for="taste" class="modal-form__field">Choose the taste<svg class="modal-form__input-icon" width="18" height="18">
+              <use href="images/icons.svg#icon-ice-cream-modal-window"></use></svg></label>
+            <select id="taste" name="taste" class="modal-form__input modal-form__input--select">
               <option value="іtrawberry">Strawberry</option>
               <option value="chocolate">Chocolate</option>
               <option value="vanilla" selected>Vanilla</option>
             </select>
           </div>
-          <div class="modal-form__container">
-            <label>
-                Quantity with 1 step value:
-                <input type="number" name="quantity" min="0" max="150" step="1" value="1" />
+          <div class="modal-form__container modal-form__container--option">
+            <label class="modal-form__field">
+                Quantity:
+                <input type="number" name="quantity" min="0" max="150" step="1" value="1" class="modal-form__input"/>
               </label>
           </div>
-          
+          <div class="modal-form__container">
         <label class="modal-form__field"
           >Comment
           <textarea
@@ -76,9 +85,10 @@
             placeholder="Сomment to the order"
           ></textarea>
         </label>
-        
+        </div>
 
-        <button class="modal-form__button" type="submit">Buy now</button>
+        <button class="modal-form__button button" type="submit">Buy now<svg class="button__icon button__icon--append" width="4" height="8">
+          <use href="images/icons.svg#icon-button-bracket"></use></svg></button>
       </form>
     </div>
   </div>
