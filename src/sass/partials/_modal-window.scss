@@ -8,28 +8,30 @@
     opacity: 1;   
     z-index: 10;  
     visibility: visible;
-pointer-events: auto;
+    pointer-events: auto;
 
-&.is-hidden {
-visibility: hidden;
-pointer-events: none;
-opacity: 0;
-}
+    @include cssTransition(visibility);
+
+    &.is-hidden {
+        visibility: hidden;
+        pointer-events: none;
+        opacity: 0;
+        }
   }
 
-  .modal-window__backdrop-bg--circle{
-      display: none;
 
+
+  .modal-window__backdrop-bg--circle{
+    display: none;
+    filter: blur(2px);
     @include respondTo(tablet) {
           position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
           width: 700px;
           height: 700px;
           display: block;
           background-color: getColor('text-label');          
           border-radius: 50%;
+          @include cssTransition(transform);
         }
 
     @include respondTo(desktop) {
@@ -39,9 +41,8 @@ opacity: 0;
   }
 .modal-window__backdrop-bg--image{
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    filter: blur(2px);    
+    @include cssTransition(transform);
     width: 100vw;
     height: 100vh;
     background-image: url(../images/modal-window/icecream-hero_mobile.png);    
@@ -82,13 +83,11 @@ opacity: 0;
 
 .modal-window {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
     overflow-y: scroll;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -96,6 +95,7 @@ opacity: 0;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+    @include cssTransition(transform);
      
     @include respondTo(tablet) {
         width: 60%;
@@ -115,7 +115,43 @@ opacity: 0;
 }
 
   }
+.modal-window__backdrop.is-hidden .modal-window,
+.modal-window__backdrop.is-hidden .modal-window__backdrop-bg--circle,
+.modal-window__backdrop.is-hidden .modal-window__backdrop-bg--image{
+    top: 0;
+    left: -100%;
+    transform: translateX(100%);
+}
 
+body.modal-open .modal-window{
+    @include respondTo(tablet){
+        top:0;
+        left: 20%;
+    }  
+    @include respondTo(desktop){
+        left: 25%;
+    }
+}
+
+body.modal-open .modal-window__backdrop-bg--image{
+    @include respondTo(tablet){
+        top:0;
+        left: 15%;
+    }  
+    @include respondTo(desktop){
+        left: 25%;
+    }
+}
+
+body.modal-open .modal-window__backdrop-bg--circle{
+    @include respondTo(tablet){
+        top:0;
+        left: 5%;
+    }  
+    @include respondTo(desktop){
+        left: 15%;
+    }
+}
 
 .modal-window__close-btn{
     position: fixed;
@@ -130,10 +166,13 @@ opacity: 0;
     display: flex;
     align-items: center;
     justify-content: center; 
+    cursor: pointer;
+    @include cssTransition(background-color, border-color);
     
     &:hover,
     &:focus{
         background-color: getColor('accent');
+        border-color:getColor('accent');
     }
 
     @include respondTo(tablet){
@@ -159,6 +198,7 @@ opacity: 0;
 
 .modal-window__close-btn-icon{
     fill: getColor('accent');
+    @include cssTransition(fill);
 }
 
 .modal-window__close-btn:hover .modal-window__close-btn-icon,
@@ -168,6 +208,11 @@ opacity: 0;
 
 .modal-form{
     width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .modal-form__container{
@@ -221,18 +266,27 @@ opacity: 0;
     letter-spacing: 0.04em;
     cursor: pointer;
 
+    &:hover,
+    &:focus{
+        outline-color: getColor('accent');
+    }
+
     &--select{
         padding-left: 26px;
         padding-right: 2px;
         padding-top: 1px;
         padding-bottom: 1px;
 
+        &:hover,
+        &:focus{
+            outline-color: getColor('accent');
+    }
     }
 }
 
 .modal-form__message{
     width: 100%;
-    height: 120px;
+    height: 100px;
     align-self: center;
     resize: none;  
     border: 1px solid getColor('accent');
@@ -245,6 +299,11 @@ opacity: 0;
     letter-spacing: 0.04em;    
     cursor: pointer;
 
+    &:focus,
+    &:hover{
+        outline-color: getColor('accent');
+    }
+
     &::placeholder{
         color: getColor('accent');
     font-family: "DM Sans", sans-serif;
@@ -253,4 +312,9 @@ opacity: 0;
     letter-spacing: 0.04em;    
     }
 }
+
+body.modal-open{
+    overflow: hidden;
+  }
+
 
