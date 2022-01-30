@@ -1,0 +1,134 @@
+.advantages {
+  @include respondTo(-mobile) {
+    padding-left: 16px;
+    padding-right: 74px;
+    padding-bottom: 97px;
+  }
+  @include respondTo(mobile-desktop) {
+    padding-left: 36px;
+    padding-right: 76px;
+    padding-bottom: 140px;
+  }
+  @include respondTo(desktop) {
+    padding-left: 115px;
+    padding-right: 115px;
+    padding-bottom: 139px;
+  }
+}
+
+.container__advantages {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1280px;
+  background-color: getColor('bakground-secondary');
+}
+
+.advantages__list {
+  @include respondTo(mobile-desktop) {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include respondTo(desktop) {
+    display: inline-flex;
+  }
+}
+
+.advantages__item {
+  @include respondTo(-mobile) {
+    margin-bottom: 38px;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+  }
+
+  @include respondTo(mobile-tablet) {
+    margin-right: 60px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+  @include respondTo(tablet-desktop) {
+    @include flexBasis(3, 30px);
+
+    width: 330px;
+    height: 220px;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
+
+.advantages__heading_bucket {
+  margin-bottom: 10px;
+  font-size: 36px;
+  line-height: 1.13;
+  letter-spacing: 0.04em;
+
+  @include respondTo(mobile-desktop) {
+    font-size: 48px;
+  }
+  @include respondTo(desktop) {
+    font-size: 58px;
+  }
+
+  font-family: $fontSecondary;
+  color: getColor('accent');
+
+  &::before {
+    content: '';
+
+    @include respondTo(-mobile) {
+      margin-top: 0px;
+    }
+
+    @include respondTo(mobile-desktop) {
+      margin-bottom: 30px;
+    }
+    background-image: url('/images/advantages/bucket.svg');
+    width: 33px;
+    height: 50px;
+    display: block;
+    margin-bottom: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &--appls {
+    &::before {
+      background-image: url('/images/advantages/appls.svg');
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &--heart {
+    &::before {
+      background-image: url('/images/advantages/heart.svg');
+      width: 44px;
+      height: 50px;
+    }
+  }
+}
+
+.advantages__article {
+  @include respondTo(-mobile) {
+    margin-top: 15px;
+  }
+  @include respondTo(mobile-desktop) {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-top: 10px;
+  }
+  @include respondTo(desktop) {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.7;
+  font-family: $fontPrimary;
+  font-weight: 700;
+  color: getColor('text-secondary');
+}
