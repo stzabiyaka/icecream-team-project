@@ -1,7 +1,7 @@
 .modal-window__backdrop {
     width: 100vw;
     height: 100vh;
-    background-color: getColor('backdrop');    
+    background-color: getColor('backdrop');        
     position: fixed;
     top: 0;
     left: 0;
@@ -18,34 +18,51 @@
         opacity: 0;
         }
   }
+  .modal-window__close-btn{
+    position: fixed;
+    z-index: 9;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 1px solid getColor('accent');
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    cursor: pointer;
+    @include cssTransition(background-color, border-color);
 
-
-
-  .modal-window__backdrop-bg--circle{
-    display: none;
-    filter: blur(2px);
-    @include respondTo(tablet) {
-          position: absolute;
-          width: 700px;
-          height: 700px;
-          display: block;
-          background-color: getColor('text-label');          
-          border-radius: 50%;
-          @include cssTransition(transform);
-        }
-
-    @include respondTo(desktop) {
-        width: 1000px;
-        height: 1000px;
+    @include respondTo(mobile){
+        top: 40px;
+        right: 5%;     
     }
-  }
+
+    @include respondTo(tablet){
+        top: 15%;
+        right: 25%;
+    }
+
+    @include respondTo(desktop){
+        right: 30%;
+    }
+    
+    &:hover,
+    &:focus{
+        background-color: getColor('accent');
+        border-color:getColor('accent');
+    }
+}
+
 .modal-window__backdrop-bg--image{
     position: absolute;
-    filter: blur(2px);    
+    filter: contrast(80%) saturate(90%) opacity(50%) brightness(95%); 
     @include cssTransition(transform);
     width: 100vw;
     height: 100vh;
-    background-image: url(../images/modal-window/icecream-hero_mobile.png);    
+    background-image: url(../images/modal-window/icecream-modal-window-mobile.png);    
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
@@ -53,29 +70,29 @@
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(../images/modal-window/icecream-hero_mobile@2x.png);
+    background-image: url(../images/modal-window/icecream-modal-window-mobile@2x.png);
     
 }
 @include respondTo(tablet) {
     width: 70vw;
-    background-image: url(../images/modal-window/icecream-hero_tablet.png);
+    background-image: url(../images/modal-window/icecream-modal-window-tablet.png);
     @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image:url(../images/modal-window/icecream-hero_tablet@2x.png);
+    background-image:url(../images/modal-window/icecream-modal-window-tablet@2x.png);
     
     }
   }
 
   @include respondTo(desktop) {
       width: 50vw;
-    background-image: url(../images/modal-window/icecream-hero_pc.png);
+    background-image: url(../images/modal-window/icecream-modal-window-desctop.png);
     @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image:url(../images/modal-window/icecream-hero_pc@2x.png);
+    background-image:url(../images/modal-window/icecream-modal-window-desctop@2x.png);
    
     }
   }
@@ -87,36 +104,39 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
-    width: 100%;
+    width: 90%;
     overflow-y: scroll;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 30px;
+    padding-bottom: 20px;
     padding-left: 20px;
     padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
     @include cssTransition(transform);
+
+    @include respondTo(mobile){
+        height: 90%;        
+    }
      
     @include respondTo(tablet) {
-        width: 60%;
-        padding-top: 60px;
-        padding-bottom: 60px;
+        height: 90%;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 50%;
         padding-left: 34px;
         padding-right: 34px;
-        height: 90%;
     }
     
-@include respondTo(desktop){
+    @include respondTo(desktop){
     padding-top: 80px;
     padding-bottom: 80px;
     padding-left: 50px;
     padding-right: 50px;
-    width: 50%;
+    width: 40%;
 }
 
   }
 .modal-window__backdrop.is-hidden .modal-window,
-.modal-window__backdrop.is-hidden .modal-window__backdrop-bg--circle,
 .modal-window__backdrop.is-hidden .modal-window__backdrop-bg--image{
     top: 0;
     left: -100%;
@@ -124,12 +144,23 @@
 }
 
 body.modal-open .modal-window{
+    padding-top: 60px;
+    top: 0;
+    left: 5%; 
+
+    @include respondTo(mobile){
+        padding-top: 60px;
+        top: 5%;
+        left: 15%;        
+    }    
+
     @include respondTo(tablet){
-        top:0;
-        left: 20%;
+        height: 70%;
+        top:15%;
+        left: 25%;
     }  
     @include respondTo(desktop){
-        left: 25%;
+        left: 30%;
     }
 }
 
@@ -140,53 +171,6 @@ body.modal-open .modal-window__backdrop-bg--image{
     }  
     @include respondTo(desktop){
         left: 25%;
-    }
-}
-
-body.modal-open .modal-window__backdrop-bg--circle{
-    @include respondTo(tablet){
-        top:0;
-        left: 5%;
-    }  
-    @include respondTo(desktop){
-        left: 15%;
-    }
-}
-
-.modal-window__close-btn{
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 1px solid getColor('accent');
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    cursor: pointer;
-    @include cssTransition(background-color, border-color);
-    
-    &:hover,
-    &:focus{
-        background-color: getColor('accent');
-        border-color:getColor('accent');
-    }
-
-    @include respondTo(tablet){
-        top: 30px;        
-        right: 0;
-        width: 30px;
-        height: 30px;
-        border: 2px solid getColor('accent');
-    }
-
-    @include respondTo(desktop){
-        right: 20px;
-        width: 40px;
-        height: 40px;
     }
 }
 
@@ -206,13 +190,21 @@ body.modal-open .modal-window__backdrop-bg--circle{
     fill: getColor('background-primary');  
 }
 
+
+.modal-form__title{
+    font-size: 20px;
+    line-height: calc(28/24);
+
+    @include respondTo(tablet){
+        margin-bottom: 10px;
+    }
+}
+
 .modal-form{
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
+    flex-direction: column;   
 }
 
 .modal-form__container{
@@ -221,7 +213,7 @@ body.modal-open .modal-window__backdrop-bg--circle{
     position: relative;
 
     &:not(:last-child){
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
 
     &--option{
@@ -231,20 +223,15 @@ body.modal-open .modal-window__backdrop-bg--circle{
 
 
 .modal-form__field{    
-    font-family: $fontSecondary;
-    font-size: 18px;
-    line-height: calc(21/18);
-    color: getColor('accent');
+    font-family: $fontPrimary;
+    font-size: 14px;
+    line-height: calc(18/14);
+    color: getColor('background-primary');
 
     @include respondTo(tablet){
-        font-size: 26px;
+        font-size: 16px;
         line-height: calc(30/26);
-    }
-
-    @include respondTo(desktop){
-        font-size: 30px;
-        line-height: calc(34/30);
-    }
+    }    
 }
 
 .modal-form__input-icon{
@@ -286,7 +273,7 @@ body.modal-open .modal-window__backdrop-bg--circle{
 
 .modal-form__message{
     width: 100%;
-    height: 100px;
+    height: 60px;
     align-self: center;
     resize: none;  
     border: 1px solid getColor('accent');
@@ -299,6 +286,10 @@ body.modal-open .modal-window__backdrop-bg--circle{
     letter-spacing: 0.04em;    
     cursor: pointer;
 
+    @include respondTo(tablet){
+        height: 50px;
+    }
+
     &:focus,
     &:hover{
         outline-color: getColor('accent');
@@ -306,15 +297,10 @@ body.modal-open .modal-window__backdrop-bg--circle{
 
     &::placeholder{
         color: getColor('accent');
-    font-family: "DM Sans", sans-serif;
+    font-family: $fontPrimary;
     font-size: 14px;
     line-height: calc(21/14);
     letter-spacing: 0.04em;    
     }
 }
-
-body.modal-open{
-    overflow: hidden;
-  }
-
 

@@ -31,7 +31,7 @@
       left: 50%;
       content: '';
       width: 65%;
-      height: 77%;
+      height: 76%;
 
       background-image: repeating-linear-gradient(
         to top,
@@ -118,24 +118,6 @@
       font-size: 20px;
     }
   }
-  &__icon {
-    width: 12.4px;
-    height: 12px;
-    fill: #d9d9d9;
-
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
-
-    &--current {
-      fill: getColor('accent');
-    }
-
-    &:hover,
-    &:focus {
-      transform: scale(150%);
-    }
-  }
 }
 
 .reviews-article__background {
@@ -185,6 +167,7 @@
 .reviews-article::before {
   content: '';
   background: url(../images/reviews/review-01.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
@@ -196,6 +179,7 @@
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviews/review-01-2x.png);
+
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -205,42 +189,44 @@
 
 .reviews-article--sliderSecond::before {
   content: '';
+
   background: url(../images/reviews/review-02.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
+
     background: url(../images/reviews/review-02-2x.png);
+
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 .reviews-article--sliderThird::before {
   content: '';
+
   background: url(../images/reviews/review-03.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
+
     background: url(../images/reviews/review-03-2x.png);
+
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 
@@ -250,18 +236,43 @@
   align-items: center;
 }
 
+
 .swiper-pagination-bullet-active {
   background-image: url(../images/reviews/home.svg);
+
   background-size: cover;
   background-repeat: no-repeat;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
+
+  @include cssTransition(transform);
+
+  &:first-child {
+    border-radius: 0;
+    background-color: #ffffff;
+    background-image: url('../images/reviewsImages/home.svg');
+  }
+
+  &-active {
+    width: 13px;
+    height: 12px;
+    background-color: #d31342;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(130%);
+  }
 }
 
-// .swiper-pagination-bullet {
-//   background-image: url(../images/advantages/appls.svg);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   width: 12px;
-//   height: 12px;
-// }
+.swiper-pagination-horizontal {
+  margin-right: 18px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  &:not(:last-child) {
+    margin-right: 18px;
+  }
+}
