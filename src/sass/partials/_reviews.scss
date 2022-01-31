@@ -157,7 +157,8 @@
   &::before {
     z-index: -1;
     content: '';
-    background: url(../images/reviewsImages/mark1.jpg);
+    background: url(../images/reviews/review-04.png);
+    background-color: #fafafa;
     position: absolute;
     left: 61px;
     top: 28px;
@@ -183,11 +184,10 @@
 }
 .reviews-article::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg5.jpg);
+  background: url(../images/reviews/review-01.png);
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -195,7 +195,7 @@
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg5x.jpg);
+    background: url(../images/reviews/review-01-2x.png);
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -205,11 +205,10 @@
 
 .reviews-article--sliderSecond::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg1.jpg);
+  background: url(../images/reviews/review-02.png);
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
   top: -55%;
   left: 50%;
@@ -217,7 +216,7 @@
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg2x.jpg);
+    background: url(../images/reviews/review-02-2x.png);
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -226,11 +225,10 @@
 }
 .reviews-article--sliderThird::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg3.jpg);
+  background: url(../images/reviews/review-03.png);
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
   top: -55%;
   left: 50%;
@@ -238,7 +236,7 @@
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg4x.jpg);
+    background: url(../images/reviews/review-03-2x.png);
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -253,7 +251,7 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-image: url(../images/reviewsImages/home.svg);
+  background-image: url(../images/reviews/home.svg);
   background-size: cover;
   background-repeat: no-repeat;
   width: 12px;
