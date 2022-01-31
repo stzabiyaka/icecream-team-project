@@ -118,24 +118,6 @@
       font-size: 20px;
     }
   }
-  &__icon {
-    width: 12.4px;
-    height: 12px;
-    fill: #d9d9d9;
-
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
-
-    &--current {
-      fill: getColor('accent');
-    }
-
-    &:hover,
-    &:focus {
-      transform: scale(150%);
-    }
-  }
 }
 
 .reviews-article__background {
@@ -157,7 +139,7 @@
   &::before {
     z-index: -1;
     content: '';
-    background: url(../images/reviewsImages/mark1.jpg);
+    background: url('../images/reviewsImages/mark1.jpg');
     position: absolute;
     left: 61px;
     top: 28px;
@@ -183,7 +165,7 @@
 }
 .reviews-article::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg5.jpg);
+  background: url('../images/reviewsImages/reviewimg5.jpg');
   width: 85px;
   height: 85px;
   overflow: hidden;
@@ -195,7 +177,7 @@
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg5x.jpg);
+    background: url('../images/reviewsImages/reviewimg5x.jpg');
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -205,44 +187,38 @@
 
 .reviews-article--sliderSecond::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg1.jpg);
+  background: url('../images/reviewsImages/reviewimg1.jpg');
   width: 85px;
   height: 85px;
   overflow: hidden;
   border-radius: 50%;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg2x.jpg);
+    background: url('../images/reviewsImages/reviewimg2x.jpg');
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 .reviews-article--sliderThird::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg3.jpg);
+  background: url('../images/reviewsImages/reviewimg3.jpg');
   width: 85px;
   height: 85px;
   overflow: hidden;
   border-radius: 50%;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg4x.jpg);
+    background: url('../images/reviewsImages/reviewimg4x.jpg');
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 
@@ -252,18 +228,29 @@
   align-items: center;
 }
 
-.swiper-pagination-bullet-active {
-  background-image: url(../images/reviewsImages/home.svg);
+.swiper-pagination-bullet {
   background-size: cover;
   background-repeat: no-repeat;
-  width: 12px;
-  height: 12px;
-}
+  width: 10px;
+  height: 10px;
 
-// .swiper-pagination-bullet {
-//   background-image: url(../images/advantages/appls.svg);
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   width: 12px;
-//   height: 12px;
-// }
+  @include cssTransition(transform);
+
+  &:first-child {
+    border-radius: 0;
+    background-color: #ffffff;
+    background-image: url('../images/reviewsImages/home.svg');
+  }
+
+  &-active {
+    width: 13px;
+    height: 12px;
+    background-color: #d31342;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(130%);
+  }
+}
