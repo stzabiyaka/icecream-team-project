@@ -1,11 +1,44 @@
-.article {
+.reviews__section {
+  padding-bottom: 86px;
+
+  @include respondTo(tablet) {
+    padding-bottom: 119px;
+  }
+
+  @include respondTo(desktop) {
+    padding-bottom: 132pxpx;
+  }
+}
+
+.reviews-article {
   position: relative;
   z-index: 10;
+  padding-top: 114px;
+
+  @include respondTo(tablet) {
+    padding-top: 104px;
+  }
+
+  @include respondTo(desktop) {
+    padding-top: 100px;
+  }
 
   &__text {
     font-family: $fontPrimary;
     font-weight: 500;
     text-align: center;
+
+    background-image: linear-gradient(
+      to bottom,
+      transparent 75px,
+      getColor('gradient-grey') 75px,
+      getColor('gradient-grey') 76px,
+      transparent 76px,
+      transparent 106px,
+      getColor('gradient-grey') 106px,
+      getColor('gradient-grey') 107px,
+      transparent 107px
+    );
 
     color: getColor('text-secondary');
 
@@ -65,23 +98,39 @@
   &__icon {
     width: 12.4px;
     height: 12px;
-    margin-right: 15px;
-  }
-  &__icon--ellipse {
-    width: 12px;
-    height: 12px;
-    margin-right: 15px;
-  }
-  &__icon--ellipse:last-child {
-    margin-right: 0;
+    fill: #d9d9d9;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &--current {
+      fill: getColor('accent');
+    }
+
+    &:hover,
+    &:focus {
+      transform: scale(150%);
+    }
   }
 }
 
-.article__background {
+.reviews-article__background {
   position: relative;
   margin-bottom: 15px;
   background: #fafafa;
   z-index: 1;
+
+  @include respondTo(tablet) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+  @include respondTo(desktop) {
+    margin-left: 62px;
+    margin-right: 62px;
+  }
+
   &::before {
     z-index: -1;
     content: '';
@@ -95,20 +144,21 @@
     @include respondTo(tablet) {
       left: 50px;
       top: 32px;
-  
     }
   }
   &::after {
+    margin-bottom: 15px;
     content: '...';
     font-size: 32px;
     text-align: center;
     letter-spacing: 13px;
+    line-height: 30px;
     display: block;
     color: #c7133e;
     background-color: getColor('background-primary');
   }
 }
-.article::before {
+.reviews-article::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg5.jpg);
   width: 85px;
@@ -116,21 +166,21 @@
   overflow: hidden;
   border-radius: 50%;
   position: absolute;
-  top: -45%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translateX(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
     background: url(../images/reviewsImages/reviewimg5x.jpg);
     background-size: cover;
   }
-  @include respondTo(tablet){
-    top: -50%;
+  @include respondTo(tablet) {
+    // top: -100px;
   }
 }
 
-.article--sliderSecond::before {
+.reviews-article--sliderSecond::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg1.jpg);
   width: 85px;
@@ -147,11 +197,11 @@
     background: url(../images/reviewsImages/reviewimg2x.jpg);
     background-size: cover;
   }
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     top: -60%;
   }
 }
-.article--sliderThird::before {
+.reviews-article--sliderThird::before {
   content: '';
   background: url(../images/reviewsImages/reviewimg3.jpg);
   width: 85px;
@@ -168,13 +218,25 @@
     background: url(../images/reviewsImages/reviewimg4x.jpg);
     background-size: cover;
   }
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     top: -60%;
   }
 }
 
-.icon {
+.reviews-icon {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: red;
+  width: 24px;
+  height: 24px;
+}
+
+// .swiper-pagination-bullet {
+//   background-color: teal;
+//   width: 24px;
+//   height: 24px;
+// }
