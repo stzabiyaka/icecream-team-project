@@ -35,20 +35,11 @@
   }
 }
 .products-title {
-  font-size: 34px;
-  line-height: 1.15;
   margin-bottom: 31px;
-
   @include respondTo(tablet) {
-    font-size: 48px;
-    line-height: 1.14;
     margin-bottom: 39px;
   }
-
   @include respondTo(desktop) {
-    font-size: 58px;
-    line-height: 1.13;
-    letter-spacing: 0.06em;
     margin-bottom: 49px;
   }
 }
