@@ -24,28 +24,49 @@
   }
 
   &__text {
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      content: '';
+      width: 65%;
+      height: 77%;
+
+      background-image: repeating-linear-gradient(
+        to top,
+        transparent,
+        transparent 30px,
+        getColor('gradient-grey') 30px,
+        getColor('gradient-grey') 31px
+      );
+
+      transform: translateX(-50%);
+
+      @include respondTo(tablet) {
+        bottom: 2px;
+        height: 70%;
+        width: 78%;
+      }
+
+      @include respondTo(desktop) {
+        bottom: 8px;
+        width: 87%;
+        height: 60%;
+      }
+    }
+
     font-family: $fontPrimary;
     font-weight: 500;
     text-align: center;
-
-    background-image: linear-gradient(
-      to bottom,
-      transparent 75px,
-      getColor('gradient-grey') 75px,
-      getColor('gradient-grey') 76px,
-      transparent 76px,
-      transparent 106px,
-      getColor('gradient-grey') 106px,
-      getColor('gradient-grey') 107px,
-      transparent 107px
-    );
 
     color: getColor('text-secondary');
 
     font-size: 12px;
     line-height: 2.55;
 
-    padding: 43px 26px;
+    padding-top: 43px;
+    padding-bottom: 26px;
     padding-right: 66px;
     padding-left: 57px;
 
@@ -53,16 +74,18 @@
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px 39px;
-      padding-right: 89px;
-      padding-left: 87px;
+      padding: 47px;
+      padding-bottom: 34px;
+      padding-right: 80px;
+      padding-left: 80px;
     }
 
     @include respondTo(desktop) {
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px 39px;
+      padding-top: 47px;
+      padding-bottom: 39px;
       padding-right: 89px;
       padding-left: 87px;
     }
@@ -230,13 +253,17 @@
 }
 
 .swiper-pagination-bullet-active {
-  background-color: red;
-  width: 24px;
-  height: 24px;
+  background-image: url(../images/reviewsImages/home.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 12px;
+  height: 12px;
 }
 
 // .swiper-pagination-bullet {
-//   background-color: teal;
-//   width: 24px;
-//   height: 24px;
+//   background-image: url(../images/advantages/appls.svg);
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   width: 12px;
+//   height: 12px;
 // }
