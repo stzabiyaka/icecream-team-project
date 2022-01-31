@@ -1,54 +1,54 @@
-<section id="reviews" class="section">
-<article class="article">
-   <div class="container"> 
-    <h2 class="section__title--hidden" hidden> Customer Reviews</h2>
-    <!-- img псевдоэлемент -->
-   <div class="article__background">
-    <p class="article__text">  Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In hendrerit nulla quam nunc, accumsan congue. </p>
-   </div>
-    <!-- точки псевдоэлемент -->
-    <p class="article__contact">Emily, Los Angeles</p>
+<section id="reviews" class="section reviews__section">
+  <h2 class="section__title--hidden">Customer Reviews</h2>
+  <div class="container reviews__container swiper mySwiper">
+    <div class="swiper-wrapper">
+      <article class="reviews-article swiper-slide customer-item">
+        <!-- img псевдоэлемент -->
+        <div class="reviews-article__background">
+          <p class="reviews-article__text">
+            Nullam viverra consectetuer. Quisque cursus et, porttitor risus. Aliquam sem. In
+            hendrerit nulla quam nunc, accumsan congue.
+          </p>
+        </div>
+        <!-- точки псевдоэлемент -->
+        <p class="reviews-article__contact">Emily, Los Angeles</p>
+      </article>
 
-  <div class="icon">
-    <svg class="article__icon">
-        <use href='images/icons.svg#icon-home'></use>
-    </svg>
-    <svg class="article__icon--ellipse">
-        <use href='images/icons.svg#icon-ellipse'></use>
-    </svg>
-    <svg class="article__icon--ellipse">
-        <use href='images/icons.svg#icon-ellipse'></use>
-    </svg>
+      <article class="reviews-article review-article--sliderSecond swiper-slide" hidden>
+        <!-- img псевдоэлемент -->
+        <div class="reviews-article__background">
+          <p class="reviews-article__text">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+            laudantium, totam rem aperiam!
+          </p>
+        </div>
+        <!-- точки псевдоэлемент -->
+        <p class="reviews-article__contact">Anna, New York</p>
+      </article>
+
+      <article class="reviews-article article--sliderThird swiper-slide" hidden>
+        <h2 class="section__title--hidden">Customer Reviews</h2>
+        <!-- img псевдоэлемент -->
+        <div class="reviews-article__background">
+          <p class="reviews-article__text">
+            Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Fusce nibh.
+            Fusce suscipit libero eget elit.
+          </p>
+        </div>
+        <!-- точки псевдоэлемент -->
+        <p class="reviews-article__contact">Dasy, Texas</p>
+      </article>
+    </div>
+    <div class="reviews-icon swiper-pagination">
+      <!-- <svg class="reviews-article__icon swiper-pagination-bullet-active">
+        <use href="images/icons.svg#icon-home"></use>
+      </svg>
+      <svg class="reviews-article__icon swiper-pagination-bullet">
+        <use href="images/icons.svg#icon-ellipse"></use>
+      </svg>
+      <svg class="reviews-article__icon">
+        <use href="images/icons.svg#icon-ellipse swiper-pagination-bullet"></use>
+      </svg> -->
+    </div>
   </div>
-   </div>
-   
-</article>
 </section>
-
-
-
-<article class="article article--sliderSecond">
-    <div class="container"> 
-     <h2 class="section__title--hidden" hidden> Customer Reviews</h2>
-     <!-- img псевдоэлемент -->
-     <div class="article__background">
-        <p class="article__text"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam!</p>
-     </div>
-     <!-- точки псевдоэлемент -->
-     <p class="article__contact">Anna, New York</p>
-    </div>
-</article>
-
-
-
-<article class="article article--sliderThird" >
-    <div class="container"> 
-     <h2 class="section__title--hidden" hidden> Customer Reviews</h2>
-     <!-- img псевдоэлемент -->
-    <div class="article__background ">
-        <p class="article__text"> Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor. Fusce nibh. Fusce suscipit libero eget elit.</p>
-    </div>
-     <!-- точки псевдоэлемент -->
-     <p class="article__contact">Dasy, Texas</p>
-    </div>
-</article>
