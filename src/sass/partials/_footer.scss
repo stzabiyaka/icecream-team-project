@@ -17,7 +17,7 @@
     min-width: 340px;
   }
   @include respondTo(desktop) {
-    
+    width: 563px;
   }
 }
 .title {
@@ -83,11 +83,8 @@
   }
 }
 .social__box {
-  justify-content: right;
-  display: flex;
-  flex-wrap: wrap;
   @include respondTo(tablet) {
-    margin-left: 92px;
+    margin-left: 130px;
   }
   @include respondTo(desktop) {
     margin-left: 257px;
@@ -96,12 +93,12 @@
 .social__media {
   justify-content: right;
   display: flex;
-  padding: 43px 0 46px 147px;
+  padding: 43px 0 46px 0;
 
   @include respondTo(tablet) {
     justify-content: right;
     display: flex;
-    padding: 0;
+    padding: 0 0 50px 0;
   }
 }
 .media__icon2 {
@@ -130,7 +127,7 @@
     display: flex;
   }
   @include respondTo(desktop) {
-    margin-top: 50px;
+    
   }
 }
 .contact__tel {
@@ -162,7 +159,7 @@
   align-items: center;
   flex-wrap: wrap;
   background: #fff5f6;
-  padding: 22px 0 25px 0;
+  padding: 22px 20px 25px 20px;
   border-top: 1px solid #e1e1e1;
   @include respondTo(tablet){
     padding: 28px 0 26px 0;
