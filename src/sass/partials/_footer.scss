@@ -20,14 +20,13 @@
     letter-spacing: 0.02em;
     color: #907E82;
     background-color: getColor('background-secondary');
-    // left: 50%;
-    // transform: translate(-50%, 0);
-    @include respondTo(tablet){
-      padding: 28px 0 26px 0;
-    }
-    @include respondTo(desktop){
-      padding: 10px 0;
-    }
+   
+    // @include respondTo(tablet){
+    //   padding: 28px 0 26px 0;
+    // }
+    // @include respondTo(desktop){
+    //   padding: 10px 0;
+    // }
   }
 }
 .box {
