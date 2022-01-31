@@ -316,3 +316,11 @@
     margin-bottom: 0;
   }
 }
+
+.extra-map {
+  display: none;
+
+  &.is-map {
+    display: block;
+  }
+}
