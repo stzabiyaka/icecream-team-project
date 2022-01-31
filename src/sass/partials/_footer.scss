@@ -1,5 +1,5 @@
 .footer {
-  height: 320px;
+  padding-bottom: 97px;
   background-color: getColor('background-secondary');
 }
 .box {
@@ -150,7 +150,7 @@
   color: #d41443;
 }
 .border {
-  border: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
 }
 
 .copyright {
@@ -189,8 +189,11 @@
   letter-spacing: 0.02em;
   color: #907E82;
 }
-.ice-cream:before {
+.ice-cream::after {
   display: block;
-  content: "\00a9";
+  content: "\00a9 2022 - IceCream.";
   padding-right: 6px;
+}
+.all-rights::after{
+  content: "All Rights Reserved.";
 }
