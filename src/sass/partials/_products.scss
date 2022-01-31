@@ -166,6 +166,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   content: url(../images/products/product-icecream_mobile.png);
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    content: url(../images/products/product-icecream_mobile@2x.png);
+    transform: scaleX(50%) scaleY(50%);
+    top: -255px;
+    left: -39%;
+  }
 }
 .icecoffee::before {
   position: absolute;
@@ -173,6 +179,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   content: url(../images/products/product-icecoffee_mobile.png);
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    content: url(../images/products/product-icecoffee_mobile@2x.png);
+    transform: scaleX(50%) scaleY(50%);
+    top: -255px;
+    left: -39%;
+  }
 }
 .milkshake::before {
   position: absolute;
@@ -180,6 +192,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   content: url(../images/products/product-milkshake_mobile.png);
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    content: url(../images/products/product-milkshake_mobile@2x.png);
+    transform: scaleX(50%) scaleY(50%);
+    top: -255px;
+    left: -39%;
+  }
 }
 @include respondTo(mobile) {
   .milkshake::before {
