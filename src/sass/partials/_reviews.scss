@@ -24,28 +24,49 @@
   }
 
   &__text {
+    position: relative;
+    &::before {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      content: '';
+      width: 65%;
+      height: 76%;
+
+      background-image: repeating-linear-gradient(
+        to top,
+        transparent,
+        transparent 30px,
+        getColor('gradient-grey') 30px,
+        getColor('gradient-grey') 31px
+      );
+
+      transform: translateX(-50%);
+
+      @include respondTo(tablet) {
+        bottom: 2px;
+        height: 70%;
+        width: 78%;
+      }
+
+      @include respondTo(desktop) {
+        bottom: 8px;
+        width: 87%;
+        height: 60%;
+      }
+    }
+
     font-family: $fontPrimary;
     font-weight: 500;
     text-align: center;
-
-    background-image: linear-gradient(
-      to bottom,
-      transparent 75px,
-      getColor('gradient-grey') 75px,
-      getColor('gradient-grey') 76px,
-      transparent 76px,
-      transparent 106px,
-      getColor('gradient-grey') 106px,
-      getColor('gradient-grey') 107px,
-      transparent 107px
-    );
 
     color: getColor('text-secondary');
 
     font-size: 12px;
     line-height: 2.55;
 
-    padding: 43px 26px;
+    padding-top: 43px;
+    padding-bottom: 26px;
     padding-right: 66px;
     padding-left: 57px;
 
@@ -53,16 +74,18 @@
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px 39px;
-      padding-right: 89px;
-      padding-left: 87px;
+      padding: 47px;
+      padding-bottom: 34px;
+      padding-right: 80px;
+      padding-left: 80px;
     }
 
     @include respondTo(desktop) {
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px 39px;
+      padding-top: 47px;
+      padding-bottom: 39px;
       padding-right: 89px;
       padding-left: 87px;
     }
@@ -95,24 +118,6 @@
       font-size: 20px;
     }
   }
-  &__icon {
-    width: 12.4px;
-    height: 12px;
-    fill: #d9d9d9;
-
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
-
-    &--current {
-      fill: getColor('accent');
-    }
-
-    &:hover,
-    &:focus {
-      transform: scale(150%);
-    }
-  }
 }
 
 .reviews-article__background {
@@ -134,7 +139,8 @@
   &::before {
     z-index: -1;
     content: '';
-    background: url(../images/reviewsImages/mark1.jpg);
+    background: url(../images/reviews/review-04.png);
+    background-color: #fafafa;
     position: absolute;
     left: 61px;
     top: 28px;
@@ -160,11 +166,11 @@
 }
 .reviews-article::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg5.jpg);
+  background: url(../images/reviews/review-01.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
   top: 0;
   left: 50%;
@@ -172,7 +178,8 @@
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg5x.jpg);
+    background: url(../images/reviews/review-01-2x.png);
+
     background-size: cover;
   }
   @include respondTo(tablet) {
@@ -182,44 +189,44 @@
 
 .reviews-article--sliderSecond::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg1.jpg);
+
+  background: url(../images/reviews/review-02.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg2x.jpg);
+
+    background: url(../images/reviews/review-02-2x.png);
+
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 .reviews-article--sliderThird::before {
   content: '';
-  background: url(../images/reviewsImages/reviewimg3.jpg);
+
+  background: url(../images/reviews/review-03.png);
+
   width: 85px;
   height: 85px;
   overflow: hidden;
-  border-radius: 50%;
   position: absolute;
-  top: -55%;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, 50%);
+  transform: translate(-50%);
 
   @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     content: '';
-    background: url(../images/reviewsImages/reviewimg4x.jpg);
+
+    background: url(../images/reviews/review-03-2x.png);
+
     background-size: cover;
-  }
-  @include respondTo(tablet) {
-    top: -60%;
   }
 }
 
@@ -229,14 +236,43 @@
   align-items: center;
 }
 
+
 .swiper-pagination-bullet-active {
-  background-color: red;
-  width: 24px;
-  height: 24px;
+  background-image: url(../images/reviews/home.svg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 10px;
+
+  @include cssTransition(transform);
+
+  &:first-child {
+    border-radius: 0;
+    background-color: #ffffff;
+    background-image: url('../images/reviewsImages/home.svg');
+  }
+
+  &-active {
+    width: 13px;
+    height: 12px;
+    background-color: #d31342;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(130%);
+  }
 }
 
-// .swiper-pagination-bullet {
-//   background-color: teal;
-//   width: 24px;
-//   height: 24px;
-// }
+.swiper-pagination-horizontal {
+  margin-right: 18px;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  &:not(:last-child) {
+    margin-right: 18px;
+  }
+}

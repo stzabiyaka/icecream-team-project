@@ -1,12 +1,11 @@
 <div class="modal-window__backdrop is-hidden" data-modal>
-  <div class="modal-window__backdrop-bg--circle"></div>
+  <button type="button" class="modal-window__close-btn" data-modal-close>
+    <svg class="modal-window__close-btn-icon">
+      <use href="images/icons.svg#icon-cross-modal-window"></use>
+    </svg>
+  </button>
   <div class="modal-window__backdrop-bg--image"></div>
-  <div class="modal-window container">
-    <button type="button" class="modal-window__close-btn" data-modal-close>
-      <svg class="modal-window__close-btn-icon">
-        <use href="images/icons.svg#icon-cross-modal-window"></use>
-      </svg>
-    </button>
+  <div class="modal-window container">    
     <p class="modal-form__title section__title">enter order details</p>
     <form action="#" class="modal-form">
       <div class="modal-form__container">
@@ -25,7 +24,6 @@
           required
           pattern="[0-9]{10}"
           title="0667773388"
-          required
         />
         <label class="modal-form__field" for="tel"
           >Phone<svg class="modal-form__input-icon" width="18" height="18">
@@ -48,7 +46,6 @@
           id="product-name"
           name="product-name"
           class="modal-form__input modal-form__input--select"
-          required
         >
           <option value="cream" selected>Ice cream</option>
           <option value="coffee">Ice coffee</option>
