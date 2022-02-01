@@ -2,21 +2,22 @@
   position: relative;
   padding-bottom: 43px;
   background-color: getColor('background-secondary');
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     padding-bottom: 91px;
   }
-  @include respondTo(desktop){
+  @include respondTo(desktop) {
     padding-bottom: 97px;
   }
 
   &::after {
+    width: 100%;
     border-top: 1px solid #e1e1e1;
     position: absolute;
-    left: 27.5%;
-    display: inline-block;
-    width: 45%;
-    text-align: center;
+    left: 0;
     top: 100%;
+    display: inline-block;
+    text-align: center;
+
     padding-top: 22px;
     padding-bottom: 25px;
     content: '\00a9 2020 - IceCream. All Rights Reserved.';
@@ -24,19 +25,18 @@
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
-    line-height: calc(21/14);
+    line-height: calc(21 / 14);
     color: getColor('text-primary');
     background-color: getColor('background-secondary');
 
-    @include respondTo(tablet){
-      width: 100%;
+    @include respondTo(tablet) {
       left: 0;
       padding-top: 29px;
       padding-bottom: 18px;
-      line-height: calc(26/14);
+      line-height: calc(26 / 14);
       letter-spacing: 0.02em;
     }
-    @include respondTo(desktop){
+    @include respondTo(desktop) {
       padding: 10px 0;
     }
   }
@@ -87,14 +87,13 @@
   }
 }
 
-.footer__title-lable{
-  @include respondTo(tablet){
+.footer__title-lable {
+  @include respondTo(tablet) {
     letter-spacing: 00.04em;
   }
-  @include respondTo(desktop){
+  @include respondTo(desktop) {
     font-size: 30px;
-    line-height: calc(34/30);
-
+    line-height: calc(34 / 30);
   }
 }
 
@@ -151,7 +150,7 @@
     padding: 0 0 46px 0;
   }
 
-  @include respondTo(desktop){
+  @include respondTo(desktop) {
     padding: 0 0 50px 0;
   }
 }
@@ -171,7 +170,7 @@
     background-color: getColor('accent');
   }
 
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     padding: 7px;
   }
 }
@@ -197,12 +196,12 @@
   text-align: right;
   color: #000000;
 
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     font-style: 14px;
     line-height: 1.86;
   }
 
-  @include respondTo(desktop){
+  @include respondTo(desktop) {
     font-size: 16px;
     letter-spacing: 0.02em;
   }
@@ -216,12 +215,12 @@
   text-align: right;
   color: #d41443;
 
-  @include respondTo(tablet){
+  @include respondTo(tablet) {
     font-style: 14px;
     line-height: 1.86;
   }
 
-  @include respondTo(desktop){
+  @include respondTo(desktop) {
     font-size: 16px;
     letter-spacing: 0.02em;
   }
