@@ -19,7 +19,6 @@
     text-align: center;
     padding-left: 27%;
     padding-right: 27%;
-
     padding-top: 22px;
     padding-bottom: 25px;
     content: '\00a9 2020 - IceCream. All Rights Reserved.';
@@ -31,11 +30,6 @@
     color: getColor('text-primary');
     background-color: getColor('background-secondary');
 
-    // @media screen and (min-width: 320px) {
-    //   padding-left: 90px;
-    //   padding-right: 90px;
-    // }
-
     @include respondTo(tablet) {
       left: 0;
       padding-top: 29px;
@@ -43,6 +37,7 @@
       line-height: calc(26 / 14);
       letter-spacing: 0.02em;
     }
+
     @include respondTo(desktop) {
       padding: 10px 0;
     }
@@ -52,9 +47,8 @@
   @include respondTo(tablet) {
     display: flex;
   }
-  @include respondTo(desktop) {
-  }
 }
+
 .footer__title--box {
   width: 234px;
 
@@ -65,32 +59,24 @@
     width: 563px;
   }
 }
+.footer__span{
+  display: flex;
+  flex-direction: column;
+}
 .footer__title {
-  font-family: Titan One;
-  font-style: normal;
-  font-weight: normal;
+  font-family: $fontSecondary;
   font-size: 18px;
   line-height: 1.16;
   text-transform: uppercase;
   color: getColor('text-label');
 
   @include respondTo(tablet) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
     font-size: 26px;
     line-height: 1.15;
-    text-transform: uppercase;
-    color: getColor('text-label');
   }
   @include respondTo(desktop) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
     font-size: 38px;
     line-height: 0.89;
-    text-transform: uppercase;
-    color: getColor('text-label');
   }
 }
 
@@ -105,37 +91,20 @@
 }
 
 .footer__title-with {
-  font-family: Titan One;
-  font-style: normal;
-  font-weight: normal;
+  font-family: $fontSecondary;
   font-size: 34px;
   line-height: 1.14;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: getColor('accent');
-  padding-top: 17px;
 
   @include respondTo(tablet) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
     font-size: 48px;
     line-height: 1.14;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: getColor('accent');
-    padding-top: 16px;
   }
   @include respondTo(desktop) {
-    font-family: Titan One;
-    font-style: normal;
-    font-weight: normal;
     font-size: 58px;
     line-height: 1.14;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: getColor('accent');
-    padding-top: 15px;
   }
 }
 .footer-social__box {
@@ -149,26 +118,27 @@
 .footer-social__media {
   justify-content: right;
   display: flex;
-  padding: 43px 0 46px 0;
+  margin: 43px 0 46px 0;
 
   @include respondTo(tablet) {
     justify-content: right;
     display: flex;
-    padding: 0 0 46px 0;
+    margin: 0 0 46px 0;
   }
 
   @include respondTo(desktop) {
-    padding: 0 0 50px 0;
+    margin: 0 0 50px 0;
   }
 }
-.footer-media__icon2 {
-  margin: 0 28px;
+.footer-media__icon   {
+  margin-left: 28px;
 }
 .footer__icon-social {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 6px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background-color: getColor('icon');
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -176,9 +146,9 @@
   &:focus {
     background-color: getColor('accent');
   }
-
-  @include respondTo(tablet) {
-    padding: 7px;
+  @include respondTo(tablet){
+    width: 34px;
+    height: 34px;
   }
 }
 .footer__icon {
@@ -214,7 +184,8 @@
   }
 }
 .footer__tel {
-  font-family: DM Sans;
+  text-decoration: none;
+  font-family: $fontPrimary;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
