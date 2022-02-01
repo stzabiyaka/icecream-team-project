@@ -58,7 +58,6 @@
 
   @include respondTo(tablet) {
     max-width: 162px;
-    padding-top: 10px;
 
     font-size: 22px;
     line-height: 1.14;
@@ -114,7 +113,7 @@
   }
 }
 
-.article {
+.hero-article {
   display: flex;
   justify-content: end;
 
@@ -131,7 +130,7 @@
   }
 }
 
-.article__box {
+.hero-article__box {
   position: relative;
 
   width: 114px;
@@ -169,7 +168,7 @@
   }
 }
 
-.article__text {
+.hero-article__text {
   margin: 0 0 7px 0;
 
   font-family: DM Sans;
@@ -188,7 +187,7 @@
   }
 }
 
-.read-more.article__read-more {
+.read-more.hero-article__read-more {
   margin: 0 auto 0 0;
   padding: 0px;
   width: 18px;
@@ -203,7 +202,7 @@
   &:focus {
     background-color: getColor('background-primary');
     transform: scale(120%);
-    .article__icon-arrow {
+    .hero-article__icon-arrow {
       width: 8px;
       height: 8px;
 
@@ -215,7 +214,7 @@
   }
 }
 
-.article__icon-arrow {
+.hero-article__icon-arrow {
   width: 6px;
   height: 6px;
   fill: getColor('accent');
@@ -302,11 +301,15 @@
 
 .sales-link-list__item {
   position: relative;
-  margin-bottom: 13px;
+
   z-index: 1;
 
-  @include respondTo(desktop) {
-    margin-bottom: 15px;
+  &:not(:last-child) {
+    margin-bottom: 13px;
+
+    @include respondTo(desktop) {
+      margin-bottom: 15px;
+    }
   }
 
   &::after {
@@ -380,7 +383,7 @@
   font-size: 0;
   transition: $transitionDuration $transitionTiming;
 }
-.read-more-state:checked ~ .article__box .article__text .read-more-target {
+.read-more-state:checked ~ .hero-article__box .hero-article__text .read-more-target {
   opacity: 1;
   font-size: inherit;
   max-height: 999em;
@@ -389,16 +392,16 @@
   color: getColor('accent');
 }
 
-.read-more-state:checked ~ .article__box .article__text {
+.read-more-state:checked ~ .hero-article__box .hero-article__text {
   font-weight: bold;
   color: getColor('accent');
 }
 
-.read-more-state:checked ~ .article__box .read-more {
+.read-more-state:checked ~ .hero-article__box .read-more {
   transform: rotate(90deg) scale(120%);
 }
 
-.read-more-state:checked ~ .article__box {
+.read-more-state:checked ~ .hero-article__box {
   width: auto;
   max-height: 210px;
 
@@ -427,7 +430,7 @@
   }
   .hero__title-image--ice-cream {
     transform: translateY(100%);
-    animation: slide-from-bottom 4s ease-in-out;
+    animation: slide-from-bottom 1500ms ease-in-out;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
@@ -444,9 +447,9 @@
   }
   .hero__title-image--girl {
     transform: translateX(300%);
-    animation: slide-from-right 0.5s linear;
+    animation: slide-from-right 500ms linear;
     animation-iteration-count: 1;
-    animation-delay: 4.5s;
+    animation-delay: 1500ms;
     animation-fill-mode: forwards;
   }
   @keyframes slide-from-right {
@@ -457,11 +460,11 @@
       transform: translateX(0);
     }
   }
-  .article {
+  .hero-article {
     transform: translateX(-300%);
-    animation: slide-from-left 0.5s linear;
+    animation: slide-from-left 500ms linear;
     animation-iteration-count: 1;
-    animation-delay: 4.5s;
+    animation-delay: 1500ms;
     animation-fill-mode: forwards;
   }
   @keyframes slide-from-left {

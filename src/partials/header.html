@@ -1,12 +1,16 @@
 <header class="header" id="home">
   <div class="container header__container">
-    <a class="logo" href="#"> icecream </a>
+    <a class="logo" href="#home" title="IceCream made with passion">
+      <svg width="50" height="50" class="logo__icon">
+        <use href="./images/icons.svg#icon-logo"></use>
+      </svg>
+      icecream 
+    </a>
 
     <nav class="nav" data-menu>
       <button
         class="button header__button header__button--no-desktop header__button--close"
         type="button"
-        aria-controls="nav"
         data-menu-button-close
       >
         <svg
@@ -52,10 +56,12 @@
       <button
         class="button header__button header__button--no-desktop header__button--open"
         type="button"
-        aria-controls="nav"
         data-menu-button-open
       >
-        <svg width="20" height="12" aria-label="Переключатель мобильного меню">
+        <svg 
+        width="20" 
+        height="12" 
+        aria-label="Переключатель мобильного меню">
           <use class="mobile-menu__icon-open" href="./images/icons.svg#icon-burger"></use>
         </svg>
       </button>
