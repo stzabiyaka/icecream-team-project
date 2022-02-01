@@ -3,7 +3,7 @@
   @include colorStopeedGradient(5%, 'background-primary', 'background-secondary');
 
   @include respondTo(tablet) {
-    padding-bottom: 158px;
+    padding-bottom: 165px;
     @include colorStopeedGradient(9%, 'background-primary', 'background-secondary');
   }
 
