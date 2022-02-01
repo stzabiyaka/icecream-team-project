@@ -1,256 +1,262 @@
 .modal-window__backdrop {
-    width: 100vw;
-    height: 100vh;
-    background-color: getColor('backdrop');    
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 1;   
-    z-index: 10;  
-    visibility: visible;
-pointer-events: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: getColor('backdrop');
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  z-index: 100;
+  visibility: visible;
+  pointer-events: auto;
+  overflow-y: scroll;
 
-&.is-hidden {
-visibility: hidden;
-pointer-events: none;
-opacity: 0;
+  @include cssTransition(visibility);
+
+  &.is-hidden {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+  }
 }
+.modal-window__close-btn {
+  margin-left: auto;
+  margin-top: auto;
+  z-index: 999;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(139, 3, 30, 0.5);
+  border: 1px solid getColor('background-primary');
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px rgb(236, 226, 228);
+  box-shadow: 0px 0px 20px rgb(139, 3, 30);
+
+  @include cssTransition(background-color, border-color, box-shadow);
+
+  &:hover,
+  &:focus {
+    border-color: getColor('accent');
+    background-color: rgba(236, 226, 228, 0.3);
+    box-shadow: 0px 0px 10px rgb(236, 226, 228), 0px 0px 5px rgb(236, 226, 228);
   }
+}
 
-  .modal-window__backdrop-bg--circle{
-      display: none;
+.modal-window__close-btn-icon {
+  width: 20px;
+  height: 20px;
 
-    @include respondTo(tablet) {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 700px;
-          height: 700px;
-          display: block;
-          background-color: getColor('text-label');          
-          border-radius: 50%;
-        }
+  fill: getColor('background-primary');
+  @include cssTransition(fill);
 
-    @include respondTo(desktop) {
-        width: 1000px;
-        height: 1000px;
-    }
+  .modal-window__close-btn:hover &,
+  .modal-window__close-btn:focus {
+    fill: getColor('accent');
   }
-.modal-window__backdrop-bg--image{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    background-image: url(../images/modal-window/icecream-hero_mobile.png);    
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 50%;
-    @media (min-device-pixel-ratio: 2),
+}
+
+.modal-window__backdrop-bg--image {
+  margin-left: auto;
+  margin-right: auto;
+  filter: contrast(80%) saturate(90%) opacity(80%) brightness(95%);
+  @include cssTransition(transform);
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/modal-window/icecream-modal-window-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
-    background-image: url(../images/modal-window/icecream-hero_mobile@2x.png);
-    
-}
-@include respondTo(tablet) {
-    width: 70vw;
-    background-image: url(../images/modal-window/icecream-hero_tablet.png);
+    background-image: url(../images/modal-window/icecream-modal-window-mobile@2x.png);
+  }
+  @include respondTo(tablet) {
+    width: 70%;
+    background-image: url(../images/modal-window/icecream-modal-window-tablet.png);
     @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image:url(../images/modal-window/icecream-hero_tablet@2x.png);
-    
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/modal-window/icecream-modal-window-tablet@2x.png);
     }
   }
 
   @include respondTo(desktop) {
-      width: 50vw;
-    background-image: url(../images/modal-window/icecream-hero_pc.png);
+    width: 50%;
+    background-image: url(../images/modal-window/icecream-modal-window-desctop.png);
     @media (min-device-pixel-ratio: 2),
-    (-webkit-min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    background-image:url(../images/modal-window/icecream-hero_pc@2x.png);
-   
+      (-webkit-min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(../images/modal-window/icecream-modal-window-desctop@2x.png);
     }
   }
 }
 
 .modal-window {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 90%;
+  width: 90%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  @include cssTransition(transform);
+
+  @media screen and (max-height: 600px) {
     overflow-y: scroll;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: auto;
-    margin-right: auto;
-     
-    @include respondTo(tablet) {
-        width: 60%;
-        padding-top: 60px;
-        padding-bottom: 60px;
-        padding-left: 34px;
-        padding-right: 34px;
-        height: 90%;
-    }
-    
-@include respondTo(desktop){
+  }
+
+  @include respondTo(mobile) {
+    height: 90%;
+  }
+
+  @include respondTo(tablet) {
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+    padding-left: 34px;
+    padding-right: 34px;
+  }
+
+  @include respondTo(desktop) {
     padding-top: 80px;
     padding-bottom: 80px;
     padding-left: 50px;
     padding-right: 50px;
-    width: 50%;
+  }
+}
+.modal-window__backdrop.is-hidden .modal-window,
+.modal-window__backdrop.is-hidden .modal-window__backdrop-bg--image {
+  transform: translateX(100%);
 }
 
+.modal-form__title {
+  font-size: 20px;
+  line-height: calc(28 / 24);
+  font-weight: 700;
+  text-shadow: 0px 0px 5px rgb(236, 226, 228), 0px 0px 10px rgb(236, 226, 228),
+    0px 0px 15px rgb(236, 226, 228);
+
+  @include respondTo(tablet) {
+    margin-bottom: 10px;
+  }
+}
+
+.modal-form {
+  margin-bottom: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-form__container {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 5px;
   }
 
-
-.modal-window__close-btn{
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 1px solid getColor('accent');
-    border-radius: 50%;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    
-    &:hover,
-    &:focus{
-        background-color: getColor('accent');
-    }
-
-    @include respondTo(tablet){
-        top: 30px;        
-        right: 0;
-        width: 30px;
-        height: 30px;
-        border: 2px solid getColor('accent');
-    }
-
-    @include respondTo(desktop){
-        right: 20px;
-        width: 40px;
-        height: 40px;
-    }
+  &--option {
+    flex-direction: column;
+  }
 }
 
-.modal-window__close-btn-icon{
-    width: 20px;
-    height: 20px;
-    
+.modal-form__field {
+  font-family: $fontPrimary;
+  font-size: 14px;
+  line-height: calc(18 / 14);
+  color: getColor('background-primary');
+
+  @include respondTo(tablet) {
+    font-size: 16px;
+    line-height: calc(30 / 26);
+  }
 }
 
-.modal-window__close-btn-icon{
-    fill: getColor('accent');
+.modal-form__input-icon {
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  fill: getColor('accent');
 }
 
-.modal-window__close-btn:hover .modal-window__close-btn-icon,
-.modal-window__close-btn:focus .modal-window__close-btn-icon{
-    fill: getColor('background-primary');  
-}
+.modal-form__input {
+  border: 1px solid getColor('accent');
+  border-radius: 4px;
+  background-color: getColor('background-primary');
+  padding-left: 26px;
+  color: getColor('accent');
+  font-family: $fontPrimary;
+  font-size: 14px;
+  line-height: calc(21 / 14);
+  letter-spacing: 0.04em;
+  cursor: pointer;
 
-.modal-form{
-    width: 100%;
-}
+  &:hover,
+  &:focus {
+    outline-color: getColor('accent');
+  }
 
-.modal-form__container{
-    display: flex;
-    flex-direction: column-reverse;
-    position: relative;
-
-    &:not(:last-child){
-        margin-bottom: 10px;
-    }
-
-    &--option{
-        flex-direction: column;
-    }
-}
-
-
-.modal-form__field{    
-    font-family: $fontSecondary;
-    font-size: 18px;
-    line-height: calc(21/18);
-    color: getColor('accent');
-
-    @include respondTo(tablet){
-        font-size: 26px;
-        line-height: calc(30/26);
-    }
-
-    @include respondTo(desktop){
-        font-size: 30px;
-        line-height: calc(34/30);
-    }
-}
-
-.modal-form__input-icon{
-    position: absolute;
-    bottom: 2px;
-    left: 4px;
-    fill: getColor('accent');
-}
-
-.modal-form__input{
-    border: 1px solid getColor('accent');
-    border-radius: 4px;
-    background-color: getColor('background-primary');
+  &--select {
     padding-left: 26px;
+    padding-right: 2px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+
+    &:hover,
+    &:focus {
+      outline-color: getColor('accent');
+    }
+  }
+}
+
+.modal-form__message {
+  width: 100%;
+  height: 60px;
+  align-self: center;
+  resize: none;
+  border: 1px solid getColor('accent');
+  border-radius: 4px;
+  background-color: getColor('background-primary');
+  color: getColor('accent');
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: calc(21 / 14);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+
+  @include respondTo(tablet) {
+    height: 50px;
+  }
+
+  &:focus,
+  &:hover {
+    outline-color: getColor('accent');
+  }
+
+  &::placeholder {
     color: getColor('accent');
-    font-family:  $fontPrimary;
+    font-family: $fontPrimary;
     font-size: 14px;
-    line-height: calc(21/14);
+    line-height: calc(21 / 14);
     letter-spacing: 0.04em;
-    cursor: pointer;
-
-    &--select{
-        padding-left: 26px;
-        padding-right: 2px;
-        padding-top: 1px;
-        padding-bottom: 1px;
-
-    }
+  }
 }
-
-.modal-form__message{
-    width: 100%;
-    height: 120px;
-    align-self: center;
-    resize: none;  
-    border: 1px solid getColor('accent');
-    border-radius: 4px;
-    background-color: getColor('background-primary');
-    color: getColor('accent');
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    line-height: calc(21/14);
-    letter-spacing: 0.04em;    
-    cursor: pointer;
-
-    &::placeholder{
-        color: getColor('accent');
-    font-family: "DM Sans", sans-serif;
-    font-size: 14px;
-    line-height: calc(21/14);
-    letter-spacing: 0.04em;    
-    }
-}
-

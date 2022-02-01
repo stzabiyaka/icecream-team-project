@@ -5,28 +5,31 @@
     <div class="about-content">
       <div class="about-content__image">
         <picture>
-          <source srcset="images/about/about.png 1x, images/about/about.png 2x">
+          <source srcset="images/about/about.png 1x, images/about/about@2x.png 2x">
           <img src="images/about/about.png" class="about-image" alt="cow">
         </picture>
       </div>
-      <div class="about-content__text">
-        <p class="sup-text">Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus lorem
-          eget, egestas eros.
-          Maecenas eleifend erat at justo fringilla.</p>
-    
-        <p class="sub-text">Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci in
-          imperdiet pрlacerat.
-          Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt.
-          <br><br>
-          Aliquam erat volutpat. Aenean accumsan.
-        </p>
-    
-        <button type="button" class="button">
+        <input type="checkbox" class="read-more-state" id="post" />
+        <div class="about-content__text read-more-wrap">
+            <p class="sup-text">Fusce ut velit laoreet, tempus arcu eu, molestie tortor. Nam vel justo cursus, faucibus lorem
+            eget, egestas eros.
+            Maecenas eleifend erat at justo fringilla.</p>
+            <p class="sub-text">Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci in
+              imperdiet placerat.
+              Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt.
+              <br><br>
+              Aliquam erat volutpat. Aenean accumsan.
+            </p>
+            <p class="sub-text sub-text--color read-more-target">Curabitur lacinia enim at ex blandit, vel pellentesque odio elementum. Mauris rhoncus orci in
+            imperdiet placerat.
+            Vestibulum euismod nisl suscipit ligula volutpat, a feugiat urna maximus. Cras massa nibh, tincidunt.
+          </p>
+        <label for="post" class="button button-about">
           Read more
-        <svg class="button__icon button__icon--append">
-          <use href="/images/icons.svg#icon-button-bracket"></use>
-        </svg>
-        </button>
+          <svg class="button__icon button__icon--append">
+            <use href="images/icons.svg#icon-button-bracket"></use>
+          </svg>
+        </label>
       </div>
     </div>
  </div>

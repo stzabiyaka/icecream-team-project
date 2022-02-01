@@ -1,75 +1,79 @@
 .gallery__section {
   padding-bottom: 80px;
 
-  background-image: linear-gradient(
-    to bottom,
-    getColor('background-secondary') 31.3%,
-    getColor('background-primary') 31.3%
-  );
+  @include colorStopeedGradient(23%, 'background-secondary', 'background-primary');
 
   @include respondTo(tablet) {
     padding-bottom: 121px;
+
+    @include colorStopeedGradient(26%, 'background-secondary', 'background-primary');
   }
 
   @include respondTo(desktop) {
     padding-bottom: 123px;
+
+    @include colorStopeedGradient(29%, 'background-secondary', 'background-primary');
   }
 }
 
 .gallery {
   display: grid;
-  grid-gap: 6px;
+
   justify-content: center;
-  grid: repeat(6, 69px) / repeat(14, 69px);
+  grid-gap: 2px;
+  grid: repeat(12, 8.5px) / repeat(28, 8.5px);
+
+  @include respondTo(tablet) {
+    grid-gap: 4px;
+    grid: repeat(12, 18px) / repeat(28, 18px);
+  }
+
+  @include respondTo(desktop) {
+    grid-gap: 6px;
+    grid: repeat(12, 30px) / repeat(28, 30px);
+  }
 }
 
 .gallery__item {
   display: block;
 
   background-color: getColor('background-secondary');
-  border-radius: 15%;
+  border-radius: 10%;
   overflow: hidden;
 
   &:nth-child(1) {
-    grid-area: 3 / 1 / span 2 / span 2;
+    grid-area: 5 / 1 / span 4 / span 4;
   }
   &:nth-child(2) {
-    grid-area: 2 / 3 / span 2 / span 2;
+    grid-area: 4 / 5 / span 4 / span 4;
   }
   &:nth-child(3) {
-    grid-area: 4 / 3 / span 2 / span 2;
+    grid-area: 8 / 5 / span 4 / span 4;
   }
   &:nth-child(4) {
-    grid-area: 1 / 5 / span 4 / span 4;
+    border-radius: 5%;
+    grid-area: 1 / 9 / span 8 / span 8;
   }
   &:nth-child(5) {
-    grid-area: 5 / 5 / span 2 / span 2;
+    grid-area: 9 / 9 / span 4 / span 4;
   }
   &:nth-child(6) {
-    grid-area: 2 / 9 / span 2 / span 2;
+    grid-area: 4 / 17 / span 4 / span 4;
   }
   &:nth-child(7) {
-    grid-area: 4 / 9 / span 2 / span 2;
+    grid-area: 8 / 17 / span 4 / span 4;
   }
   &:nth-child(8) {
-    grid-area: 1 / 11 / span 2 / span 2;
+    grid-area: 3 / 21 / span 4 / span 4;
   }
   &:nth-child(9) {
-    grid-area: 3 / 11 / span 2 / span 2;
+    grid-area: 7 / 21 / span 4 / span 4;
   }
   &:nth-child(10) {
-    grid-area: 3 / 13 / span 2 / span 2;
+    grid-area: 5 / 25 / span 4 / span 4;
   }
 
-  // @include respondTo(tablet) {
-  //   max-width: 50px;
-  // }
-
-  // @include respondTo(desktop) {
-  //   max-width: 80px;
-  // }
-
-  @include cssTransition(filter border-radius);
+  @include cssTransition(filter border-radius box-shadow);
 
   &:hover {
     border-radius: 50%;
@@ -81,7 +85,7 @@
   @include cssTransition(filter scale);
 
   .gallery__item:hover & {
-    filter: brightness(120%) saturate(50%);
+    filter: brightness(110%) saturate(50%);
     transform: scale(120%);
   }
 }

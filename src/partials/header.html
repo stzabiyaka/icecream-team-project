@@ -1,62 +1,70 @@
 <header class="header">
+  <div class="container header__container">
+    <a class="logo" href="./index.html"> icecream </a>
 
-    <div class="container header__container">
+    <nav class="nav" data-menu>
+      <button
+        class="button header__button header__button--no-desktop header__button--close"
+        type="button"
+        aria-controls="nav"
+        data-menu-button-close
+      >
+        <svg width="14" height="14" aria-label="Переключатель мобильного меню">
+          <use class="mobile-menu__icon-close" href="./images/icons.svg#icon-cross"></use>
+        </svg>
+      </button>
 
-        <a class="logo" href="./index.html">
-            icecream
-        </a>
+      <button
+        class="button header__button header__button--no-desktop header__button--submit"
+        type="submit"
+        data-modal-open-first
+      >
+        Buy now
+        <svg class="button__icon button__icon--append">
+          <use href="./images/icons.svg#icon-button-bracket"></use>
+        </svg>
+      </button>
+      <ul class="nav-list">
+        <li class="nav-list__item">
+          <a class="nav-list__link current" href="#">Home</a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link" href="#">About us</a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link" href="#">How it’s made?</a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link" href="#">Our products</a>
+        </li>
+        <li class="nav-list__item">
+          <a class="nav-list__link" href="#">Contact</a>
+        </li>
+      </ul>
+    </nav>
 
-        <nav class="nav" data-menu>
-            <button 
-            class="button header__button header__button--no-desktop header__button--close" 
-            type="button" aria-controls="nav" 
-            data-menu-button-close>
-                <svg width="14" height="14" aria-label="Переключатель мобильного меню">
-                    <use class="mobile-menu__icon-close" href="./images/icons.svg#icon-cross"></use>
-                </svg>
-            </button>
-            
-            <button class="button header__button header__button--no-desktop header__button--submit" type="submit">Buy now
-                <svg class="button__icon button__icon--append">
-                    <use href="./images/icons.svg#icon-button-bracket"></use>
-                </svg>
-            </button>
-            <ul class="nav-list">                
-                <li class="nav-list__item">
-                    <a class="nav-list__link current" href="#">Home</a>
-                </li>
-                <li class="nav-list__item">
-                    <a class="nav-list__link" href="#">About us</a>
-                </li>
-                <li class="nav-list__item">
-                    <a class="nav-list__link" href="#">How it’s made?</a>
-                </li>
-                <li class="nav-list__item">
-                    <a class="nav-list__link" href="#">Our products</a>
-                </li>
-                <li class="nav-list__item">
-                    <a class="nav-list__link" href="#">Contact</a>
-                </li>
-            </ul>
-        </nav>
+    <div class="button-box">
+      <button
+        class="button header__button header__button--no-desktop header__button--open"
+        type="button"
+        aria-controls="nav"
+        data-menu-button-open
+      >
+        <svg width="20" height="12" aria-label="Переключатель мобильного меню">
+          <use class="mobile-menu__icon-open" href="./images/icons.svg#icon-burger"></use>
+        </svg>
+      </button>
 
-        <div class="button-box">
-            <button 
-            class="button header__button header__button--no-desktop header__button--open" 
-            type="button" 
-            aria-controls="nav" 
-            data-menu-button-open>
-                <svg width="20" height="12" aria-label="Переключатель мобильного меню">           
-                    <use class="mobile-menu__icon-open" href="./images/icons.svg#icon-burger"></use>
-                </svg>
-            </button>
-
-            <button class="button header__button header__button--only-desktop" type="submit">Buy now
-                <svg class="button__icon button__icon--append">
-                    <use href="./images/icons.svg#icon-button-bracket"></use>
-                </svg>
-            </button>
-        </div>
-
+      <button
+        class="button header__button header__button--only-desktop"
+        type="button"
+        data-modal-open-second
+      >
+        Buy now
+        <svg class="button__icon button__icon--append">
+          <use href="./images/icons.svg#icon-button-bracket"></use>
+        </svg>
+      </button>
     </div>
+  </div>
 </header>

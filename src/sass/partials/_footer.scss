@@ -1,0 +1,179 @@
+.footer {
+  position: relative;
+  padding-bottom: 97px;
+  background-color: getColor('background-secondary');
+  &::after {
+    border-top: 1px solid #e1e1e1;
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    top: 100%;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    content: '\00a9 2020 - IceCream. All Rights Reserved.';
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 186%;
+    letter-spacing: 0.02em;
+    color: #907e82;
+    background-color: getColor('background-secondary');
+
+    @include respondTo(tablet){
+      padding-top: 28px;
+      padding-bottom: 26px;
+    }
+    @include respondTo(desktop){
+      padding: 10px 0;
+    }
+  }
+}
+.box {
+  @include respondTo(tablet) {
+    display: flex;
+  }
+  @include respondTo(desktop) {
+  }
+}
+.title__box {
+  width: 234px;
+  padding-top: 10px;
+
+  @include respondTo(tablet) {
+    min-width: 340px;
+  }
+  @include respondTo(desktop) {
+    width: 563px;
+  }
+}
+.title {
+  font-family: Titan One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 1.16;
+  text-transform: uppercase;
+  color: getColor('text-label');
+
+  @include respondTo(tablet) {
+    font-family: Titan One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 26px;
+    line-height: 1.15;
+    text-transform: uppercase;
+    color: getColor('text-label');
+  }
+  @include respondTo(desktop) {
+    font-family: Titan One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 0.89;
+    text-transform: uppercase;
+    color: getColor('text-label');
+  }
+}
+.title-with {
+  font-family: Titan One;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 1.14;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: getColor('accent');
+  padding-top: 17px;
+
+  @include respondTo(tablet) {
+    font-family: Titan One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 1.14;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: getColor('accent');
+    padding-top: 16px;
+  }
+  @include respondTo(desktop) {
+    font-family: Titan One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 58px;
+    line-height: 1.13;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: getColor('accent');
+    padding-top: 15px;
+  }
+}
+.social__box {
+  @include respondTo(tablet) {
+    margin-left: 130px;
+  }
+  @include respondTo(desktop) {
+    margin-left: 257px;
+  }
+}
+.social__media {
+  justify-content: right;
+  display: flex;
+  padding: 43px 0 46px 0;
+
+  @include respondTo(tablet) {
+    justify-content: right;
+    display: flex;
+    padding: 0 0 50px 0;
+  }
+}
+.media__icon2 {
+  margin: 0 28px;
+}
+.icon-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  background-color: getColor('icon');
+  transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    background-color: getColor('accent');
+  }
+}
+.icon {
+  fill: #fff;
+}
+.tel__box {
+  display: flex;
+  justify-content: right;
+  @include respondTo(tablet) {
+    display: flex;
+  }
+  @include respondTo(desktop) {
+  }
+}
+.contact__tel {
+  padding-right: 3px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 186%;
+  text-align: right;
+  color: #000000;
+}
+.tel {
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 186%;
+  text-align: right;
+  color: #d41443;
+}

@@ -1,12 +1,47 @@
 .about {
   background-color: getColor('background-secondary');
-  padding: 125px 20px 39px 20px;
+  padding: 125px 0 39px 0;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url('../images/about/milk-left-mobile.png');
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 45px;
+    top: 78%;
+    left: 0;
+    z-index: -1;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/about/milk-left-mobile@2x.png');
+      background-size: 100%;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background-image: url('../images/about/milk-right-mobile.png');
+    background-repeat: no-repeat;
+    width: 68px;
+    height: 98px;
+    top: 78%;
+    right: 0;
+    max-width: 4em;
+    z-index: -1;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url('../images/about/milk-right-mobile@2x.png');
+      background-size: 100%;
+    }
+  }
 }
 
 .label-text {
-  font-family: Titan One;
+  font-family: $fontSecondary;
   font-size: 18px;
-  line-height: 1.1em;
+  line-height: 1.1;
   margin-bottom: 15px;
 
   text-align: center;
@@ -41,30 +76,41 @@
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.5em;
+  line-height: 1.5;
   margin-bottom: 40px;
 
   color: getColor('text-secondary');
 }
 
-.subtext {
+.sub-text {
   font-family: $fontPrimary;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.5em;
-  margin-bottom: 40px;
+  line-height: 1.5;
+  margin-bottom: 20px;
 
   color: getColor('text-primary');
-}
 
-.button {
-  display: inline-flex;
+  &--color {
+    color: getColor('accent');
+  }
 }
 
 @include respondTo(tablet) {
   .about {
-    padding: 130px 39px 66px 39px;
+    padding: 130px 0 66px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      display: none;
+    }
+
+    &::after {
+      display: none;
+    }
   }
 
   .label-text {
@@ -99,20 +145,54 @@
 
   .sup-text {
     font-size: 14px;
-    line-height: 1.8em;
+    line-height: 1.8;
     margin-bottom: 42px;
   }
 
   .sub-text {
     font-size: 14px;
-    line-height: 1.8em;
-    margin-bottom: 62px;
+    line-height: 1.8;
+    margin-bottom: 20px;
   }
 }
 
 @include respondTo(desktop) {
   .about {
-    padding: 125px 112px 39px 112px;
+    padding: 125px 0 39px 0;
+
+    display: flex;
+    flex-direction: row;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      background-image: url('../images/about/milk-left-desktop.png');
+      background-repeat: no-repeat;
+      width: 161px;
+      height: 180px;
+      top: 45%;
+      left: 0;
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../images/about/milk-left-desktop@2x.png');
+      }
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      position: absolute;
+      background-image: url('../images/about/milk-right-desktop.png');
+      background-repeat: no-repeat;
+      width: 268px;
+      height: 391px;
+      top: 45%;
+      right: 0;
+      max-width: 16em;
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url('../images/about/milk-right-desktop@2x.png');
+      }
+    }
   }
 
   .label-text {
@@ -144,12 +224,35 @@
 
   .sup-text {
     font-size: 16px;
-    line-height: 1.8em;
+    line-height: 1.8;
     margin-bottom: 35px;
   }
 
   .sub-text {
-    line-height: 1.9em;
-    margin-bottom: 45px;
+    line-height: 1.9;
+    margin-bottom: 15px;
   }
+}
+
+// ==============================================
+
+.read-more-state {
+  display: none;
+}
+
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: $transitionDuration $transitionTiming;
+}
+
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.button-about {
+  display: inline-flex;
 }
