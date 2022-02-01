@@ -11,7 +11,7 @@
   pointer-events: auto;
   overflow-y: scroll;
 
-  @include cssTransition(visibility);
+  @include cssTransition(visibility opacity);
 
   &.is-hidden {
     visibility: hidden;

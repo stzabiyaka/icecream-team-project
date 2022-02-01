@@ -83,7 +83,7 @@
 
     box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
 
-    transition-property: transform;
+    transition-property: transform visibility opacity;
     transition-duration: 2s;
     transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
