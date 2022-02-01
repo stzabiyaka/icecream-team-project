@@ -404,3 +404,58 @@
     opacity: 0.4;
   }
 }
+
+// onload animation //
+
+@include respondTo(desktop) {
+  .hero {
+    overflow: hidden;
+  }
+  .hero__title-image--ice-cream {
+    transform: translateY(100%);
+    animation: slide-from-bottom 4s ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-from-bottom {
+    00% {
+      transform: translateY(100%);
+    }
+    50% {
+      transform: translateY(50%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  .hero__title-image--girl {
+    transform: translateX(300%);
+    animation: slide-from-right 0.5s linear;
+    animation-iteration-count: 1;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-from-right {
+    00% {
+      transform: translateX(300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .article {
+    transform: translateX(-300%);
+    animation: slide-from-left 0.5s linear;
+    animation-iteration-count: 1;
+    animation-delay: 4.5s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-from-left {
+    00% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
