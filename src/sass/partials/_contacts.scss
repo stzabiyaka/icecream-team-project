@@ -333,3 +333,34 @@
     opacity: 1;
   }
 }
+
+.contacts__franchise {
+  display: none;
+  width: 60%;
+  background-color: getColor('background-primary');
+  border-radius: 20px;
+  box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
+
+  &.is-frncs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+  }
+}
+
+.contacts__franchise-text {
+  font-size: 16px;
+  line-height: 1.14;
+  font-family: $fontSecondary;
+  color: getColor('text-secondary');
+  margin-bottom: 20px;
+
+  &:last-child {
+    font-family: $fontPrimary;
+    font-size: 14px;
+    color: getColor('text-primary');
+  }
+}

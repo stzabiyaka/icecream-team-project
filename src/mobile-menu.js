@@ -4,6 +4,8 @@
   const mobileMenuRef = document.querySelector('[data-menu]');
   const mapBtn = document.querySelector('[data-map-button]');
   const mapRef = document.querySelectorAll('[data-map]');
+  const frncsBtn = document.querySelector('[data-frncs-button]');
+  const frncsRef = document.querySelector('[data-frncs]');
 
   menuBtnRefOpen.addEventListener('click', () => {
     mobileMenuRef.classList.add('is-open');
@@ -21,5 +23,9 @@
     mapRef.forEach(element => {
       element.classList.toggle('is-map');
     });
+  });
+
+  frncsBtn.addEventListener('click', () => {
+    frncsRef.classList.toggle('is-frncs');
   });
 })();
