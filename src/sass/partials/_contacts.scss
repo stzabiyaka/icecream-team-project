@@ -321,8 +321,16 @@
   display: none;
   margin-top: 10px;
   overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+  @include cssTransition(visibility opacity);
 
   &.is-map {
     display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }

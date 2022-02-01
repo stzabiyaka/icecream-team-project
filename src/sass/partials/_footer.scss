@@ -2,31 +2,33 @@
   position: relative;
   padding-bottom: 97px;
   background-color: getColor('background-secondary');
-  &::after{
-    border-top:  1px solid #E1E1E1;;
+  &::after {
+    border-top: 1px solid #e1e1e1;
     position: absolute;
     left: 0;
     display: inline-block;
     width: 100%;
     text-align: center;
     top: 100%;
-    padding: 22px 85px 25px 85px;
-    content:"\00a9 2020 - IceCream. All Rights Reserved." ;
+    padding-top: 22px;
+    padding-bottom: 25px;
+    content: '\00a9 2020 - IceCream. All Rights Reserved.';
     font-family: DM Sans;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
     line-height: 186%;
     letter-spacing: 0.02em;
-    color: #907E82;
+    color: #907e82;
     background-color: getColor('background-secondary');
-   
-    // @include respondTo(tablet){
-    //   padding: 28px 0 26px 0;
-    // }
-    // @include respondTo(desktop){
-    //   padding: 10px 0;
-    // }
+
+    @include respondTo(tablet){
+      padding-top: 28px;
+      padding-bottom: 26px;
+    }
+    @include respondTo(desktop){
+      padding: 10px 0;
+    }
   }
 }
 .box {
@@ -39,7 +41,7 @@
 .title__box {
   width: 234px;
   padding-top: 10px;
-  
+
   @include respondTo(tablet) {
     min-width: 340px;
   }
@@ -140,7 +142,7 @@
   background-color: getColor('icon');
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover,
-  &:focus{
+  &:focus {
     background-color: getColor('accent');
   }
 }
@@ -151,11 +153,9 @@
   display: flex;
   justify-content: right;
   @include respondTo(tablet) {
-
     display: flex;
   }
   @include respondTo(desktop) {
-    
   }
 }
 .contact__tel {

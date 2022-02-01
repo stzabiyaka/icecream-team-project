@@ -251,15 +251,13 @@
   }
 
   &-active {
-    width: 13px;
-    height: 12px;
     background-color: #d31342;
     background-size: cover;
     background-repeat: no-repeat;
   }
   &:hover,
   &:focus {
-    transform: scale(130%);
+    transform: scale(90%);
   }
 }
 
