@@ -3,18 +3,21 @@
   top: 0;
   left: 0;
   right: 0;
-
-  padding-top: 37px;
+  z-index: 10;
 
   overflow: hidden;
-
-  background-color: getColor('background-hero');
 }
 
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  padding: 6px 20px 0 20px;
+
+  @include respondTo(tablet) {
+    padding: 37px 0 0 0;
+  }
 }
 
 .logo {
@@ -61,7 +64,7 @@
 
     padding: 10px 0;
 
-    transform: translateX(100%);
+    transform: translateX(110%);
 
     background-color: getColor('background-mobile-menu');
 

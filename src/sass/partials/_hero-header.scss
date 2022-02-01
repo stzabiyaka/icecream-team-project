@@ -1,11 +1,413 @@
-.hero__title {
-  font-family: $fontSecondary;
-  font-size: 58px;
-  line-height: 0.905;
-  /* or 52px */
+.hero {
+  background-color: getColor('background-hero');
+}
 
+.hero__container {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+
+  min-height: 502px;
+
+  padding: 193px 20px 0 20px;
+
+  @include respondTo(-tablet) {
+    overflow: hidden;
+  }
+
+  @include respondTo(tablet) {
+    min-height: 399px;
+
+    padding: 102px 0 34px 0;
+  }
+
+  @include respondTo(desktop) {
+    min-height: 665px;
+
+    padding: 160px 0 50px 0;
+  }
+}
+
+.products-box {
+  display: inline-flex;
+  flex-direction: column;
+
+  @include respondTo(tablet) {
+    width: 220px;
+  }
+
+  @include respondTo(desktop) {
+    width: 360px;
+  }
+}
+
+.hero__title {
+  max-width: 218px;
+
+  margin-bottom: 20px;
+
+  font-family: $fontSecondary;
+  font-size: 26px;
+  line-height: 1.15;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
+  color: #ffffff;
+
+  @include respondTo(-tablet) {
+    z-index: 10;
+  }
+
+  @include respondTo(tablet) {
+    max-width: 162px;
+    padding-top: 10px;
+
+    font-size: 22px;
+    line-height: 1.14;
+  }
+
+  @include respondTo(desktop) {
+    max-width: 277px;
+    margin-bottom: 25px;
+
+    font-size: 38px;
+    line-height: 1.16;
+  }
+
+  &--accent {
+    font-size: 48px;
+    line-height: 0.965;
+
+    color: getColor('accent');
+
+    @include respondTo(tablet) {
+      font-size: 34px;
+      line-height: 0.905;
+    }
+
+    @include respondTo(desktop) {
+      font-size: 58px;
+      line-height: 0.905;
+    }
+  }
+}
+
+.products-link-list {
+  display: inline-flex;
+
+  &__item:not(:last-child) {
+    margin-right: 8px;
+
+    @include respondTo(desktop) {
+      margin-right: 15px;
+    }
+  }
+
+  &__link {
+    @include respondTo(-desktop) {
+      padding-left: 14px;
+      padding-right: 14px;
+      height: 24px;
+
+      font-size: 8px;
+      line-height: 1.25;
+    }
+  }
+
+  @include respondTo(-tablet) {
+    z-index: 10;
+  }
+}
+
+.article {
+  display: flex;
+  justify-content: end;
+
+  margin-top: auto;
+
+  width: 220px;
+
+  @include respondTo(-tablet) {
+    display: none;
+  }
+
+  @include respondTo(desktop) {
+    width: 360px;
+  }
+}
+
+.article__box {
+  position: relative;
+
+  width: 114px;
+
+  @include respondTo(desktop) {
+    width: 200px;
+  }
+
+  &::before {
+    content: url(../images/hero-header/eco-milk-124.png);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transform: translate(-105%, -30%);
+
+    @include respondTo(desktop) {
+      content: url(../images/hero-header/eco-milk-188.png);
+    }
+  }
+}
+
+.article__text {
+  margin: 0 0 7px 0;
+
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 1.5;
+
+  color: #ffffff;
+
+  @include respondTo(desktop) {
+    margin: 0 0 20px 0;
+
+    font-size: 14px;
+    line-height: 1.43;
+  }
+}
+
+.read-more.article__read-more {
+  margin: 0 auto 0 0;
+  padding: 0px;
+  width: 18px;
+  height: 18px;
+
+  @include respondTo(desktop) {
+    width: 26px;
+    height: 26px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: getColor('background-primary');
+    transform: scale(120%);
+    .article__icon-arrow {
+      width: 8px;
+      height: 8px;
+
+      @include respondTo(desktop) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+.article__icon-arrow {
+  width: 6px;
+  height: 6px;
+  fill: getColor('accent');
+
+  @include respondTo(desktop) {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+.circle {
+  position: absolute;
+  top: 80px;
+  left: 35px;
+
+  min-width: 344px;
+  min-height: 344px;
+
+  border-radius: 50%;
+
+  background-color: getColor('text-label');
+
+  @include respondTo(tablet) {
+    top: 30px;
+    left: 275px;
+
+    min-width: 322px;
+    min-height: 322px;
+  }
+
+  @include respondTo(desktop) {
+    top: 50px;
+    left: 360px;
+
+    min-width: 538px;
+    min-height: 538px;
+  }
+}
+
+.hero__title-image {
+  position: absolute;
+
+  &--ice-cream {
+    @include respondTo(-tablet) {
+      top: 92px;
+      left: 117px;
+    }
+
+    @include respondTo(tablet) {
+      top: 63px;
+      right: 212px;
+    }
+
+    @include respondTo(desktop) {
+      top: 108px;
+      right: 330px;
+    }
+  }
+
+  &--girl {
+    bottom: 0;
+    right: 0;
+    @include respondTo(-tablet) {
+      display: none;
+    }
+  }
+}
+
+.sales-box {
+  @include respondTo(-tablet) {
+    display: none;
+  }
+
+  max-width: 50px;
+
+  @include respondTo(-desktop) {
+    padding-right: 7px;
+  }
+
+  @include respondTo(desktop) {
+    max-width: 80px;
+  }
+}
+
+.sales-link-list__item {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 13px;
+
+  @include respondTo(desktop) {
+    margin-bottom: 15px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    z-index: -1;
+    transform: translate(50%, -15%);
+
+    @include respondTo(desktop) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.sales-link-list__link {
+  display: block;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 1.25;
+  text-align: right;
+  letter-spacing: 0.04em;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  @include respondTo(desktop) {
+    font-size: 14px;
+    line-height: 1.29;
+  }
+
+  &--accent {
+    display: inline-block;
+
+    font-family: Titan One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 1.14;
+    z-index: 2;
+    text-align: right;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    color: #d41443;
+
+    @include respondTo(desktop) {
+      margin-bottom: 2px;
+
+      font-size: 46px;
+      line-height: 1.15;
+    }
+  }
+}
+
+// =====read more====
+.read-more-state {
+  display: none;
+}
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: $transitionDuration $transitionTiming;
+}
+.read-more-state:checked ~ .article__box .article__text .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+
+  font-weight: bold;
   color: getColor('accent');
+}
+
+.read-more-state:checked ~ .article__box .article__text {
+  font-weight: bold;
+  color: getColor('accent');
+}
+
+.read-more-state:checked ~ .article__box .read-more {
+  transform: rotate(90deg) scale(120%);
+}
+
+.read-more-state:checked ~ .article__box {
+  width: auto;
+  max-height: 210px;
+
+  border: 1px solid #ffffff;
+
+  border-radius: 10px;
+
+  padding: 10px;
+
+  overflow: hidden;
+
+  &::before {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%) scale(130%);
+
+    opacity: 0.4;
+  }
 }

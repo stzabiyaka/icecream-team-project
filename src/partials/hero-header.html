@@ -1,1 +1,136 @@
-<section id="hero"><h1 class="hero__title">Hero-Header</h1></section>
+<section id="hero" class="hero">
+    <div class="container hero__container">
+        <div class="products-box">
+            <h1 class="hero__title">
+                ice cream made with&nbsp
+                <span class="hero__title--accent">passion</span>
+            </h1>
+
+            <ul class="products-link-list">
+                <li class="products-link-list__item">
+                    <a href="#" class="link-button-accent products-link-list__link">
+                        Products
+                    </a>
+                </li class="products-link-list__item">
+                <li>
+                    <a href="#" class="link-button products-link-list__link">
+                        How it’s made?
+                    </a>
+                </li>
+            </ul>
+
+            <article class="article">
+                <input type="checkbox" class="read-more-state" id="post-hero" />
+                <div class="article__box">
+                    <p class="article__text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                        et
+                        <span class="read-more-target">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sapiente atque voluptates
+                            fuga, maxime perferendis sunt dolorem, eum maiores. Repellendus nostrum
+                            temporibus minus asperiores! Ipsum?</span>
+                    </p>
+                    <label for="post-hero" class="button read-more article__read-more">
+                        <svg class="article__icon-arrow">
+                            <use href="images/icons.svg#icon-arrow"></use>
+                        </svg>
+                    </label>
+                </div>
+            </article>
+        </div>
+
+        <div class="circle"></div>
+
+        <picture>
+            <source 
+            srcset="images/hero-header/ice-cream-171.webp 171w, images/hero-header/ice-cream-171@2x.webp 342w" 
+            media="(max-width: 767px)"
+            sizes="171px" 
+            type="image/webp" 
+            />
+            <source 
+            srcset="images/hero-header/ice-cream-143.webp 143w, images/hero-header/ice-cream-143@2x.webp 286w"                
+            media="(min-width: 768px) and (max-width: 1279px)" 
+            sizes="143px" 
+            type="image/webp" 
+            />
+            <source 
+            srcset="images/hero-header/ice-cream-236.webp 236w, images/hero-header/ice-cream-236@2x.webp 472w" 
+            media="(min-width: 1280px)"
+            sizes="236px" 
+            type="image/webp" 
+            />
+            <source 
+            srcset="images/hero-header/ice-cream-171.png 171w, images/hero-header/ice-cream-171@2x.png 342w" 
+            media="(max-width: 767px)"
+            sizes="171px" 
+            type="image/png" 
+            />
+            <source 
+            srcset="images/hero-header/ice-cream-143.png 143w, images/hero-header/ice-cream-143@2x.png 286w"                
+            media="(min-width: 768px) and (max-width: 1279px)" 
+            sizes="143px" 
+            type="image/png" 
+            />
+            <source 
+            srcset="images/hero-header/ice-cream-236.png 236w, images/hero-header/ice-cream-236@2x.png 472w" 
+            media="(min-width: 1280px)"
+            sizes="236px" 
+            type="image/png" 
+            />
+            <img class="hero__title-image hero__title-image--ice-cream"
+            src="images/hero-header/ice-cream-171.png" 
+            loading="lazy" 
+            alt="Аппетитный рожок вкусного слоеного разноцветного мороженого" 
+            />
+        </picture>
+
+        <picture>
+            <source 
+            srcset="images/hero-header/girl-168.webp 168w, images/hero-header/girl-168@2x.webp 336w"                
+            media="(min-width: 768px) and (max-width: 1279px)" 
+            sizes="168px" 
+            type="image/webp" 
+            />
+            <source 
+            srcset="images/hero-header/girl-293.webp 293w, images/hero-header/girl-293@2x.webp 586w" 
+            media="(min-width: 1280px)"
+            sizes="293px" 
+            type="image/webp" 
+            />
+            <source 
+            srcset="images/hero-header/girl-168.png 168w, images/hero-header/girl-168@2x.png 336w"                
+            media="(min-width: 768px) and (max-width: 1279px)" 
+            sizes="168px" 
+            type="image/png" 
+            />
+            <source 
+            srcset="images/hero-header/girl-293.png 293w, images/hero-header/girl-293@2x.png 586w" 
+            media="(min-width: 1280px)"
+            sizes="293px" 
+            type="image/png" 
+            />
+            <img class="hero__title-image hero__title-image--girl"
+            src="images/hero-header/girl-293.png" 
+            loading="lazy" 
+            alt="Счастливая девушка, с наслаждением поедающая мороженое" 
+            />
+        </picture>
+
+        <div class="sales-box">
+            <ul class="sales-link-list">
+                <li class="sales-link-list__item">
+                    <a href="#" class="sales-link-list__link">
+                        <span class="sales-link-list__link--accent">16</span>
+                        cafes
+                    </a>
+                </li>
+                <li class="sales-link-list__item">
+                    <a href="#" class="sales-link-list__link">
+                        <span class="sales-link-list__link--accent">23</span>
+                        food trucks
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
