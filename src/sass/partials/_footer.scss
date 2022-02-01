@@ -97,17 +97,14 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: getColor('accent');
-  padding-top: 17px;
 
   @include respondTo(tablet) {
     font-size: 48px;
     line-height: 1.14;
-    padding-top: 16px;
   }
   @include respondTo(desktop) {
     font-size: 58px;
     line-height: 1.14;
-    padding-top: 15px;
   }
 }
 .footer-social__box {
