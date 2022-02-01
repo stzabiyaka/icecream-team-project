@@ -37,12 +37,7 @@
 
   text-decoration: none;
 
-  &::before {
-    content: '';
-    background-image: url(../images/hero-header/logo.svg);
-
-    width: 50px;
-    height: 50px;
+  &__icon {
     margin-right: 18px;
 
     @include respondTo(desktop) {
@@ -81,9 +76,9 @@
     background-color: getColor('background-mobile-menu');
 
     box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
-
-    transition-property: transform visibility opacity;
-    transition-duration: 0.5s;
+    
+    transition-property: transform, visibility, opacity;
+    transition-duration: 500ms;
     transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 
@@ -121,9 +116,16 @@
       border-bottom: 1px solid #e18298;
     }
   }
+  @include respondTo(desktop) {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
 }
 
 .nav-list__link {
+  padding: 12px 0;
+
   font-family: $fontPrimary;
   font-style: normal;
   font-weight: bold;
@@ -143,6 +145,8 @@
   }
 
   @include respondTo(desktop) {
+    padding: 14.52px 0;
+
     font-size: 16px;
     line-height: 1.31;
   }
