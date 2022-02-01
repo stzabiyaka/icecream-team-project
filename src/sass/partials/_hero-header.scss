@@ -141,16 +141,30 @@
   }
 
   &::before {
-    content: url(../images/hero-header/eco-milk-124.png);
+    content: ' ';
+    background-image: url(../images/hero-header/eco-milk-124.png);
+    width: 124px;
+    height: 126px;
 
     position: absolute;
     top: 0;
     left: 0;
 
     transform: translate(-105%, -30%);
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+      background-image: url(../images/hero-header/eco-milk-124@2x.png);
+      background-size: 100%;
+    }
 
     @include respondTo(desktop) {
-      content: url(../images/hero-header/eco-milk-188.png);
+      background-image: url(../images/hero-header/eco-milk-188.png);
+      width: 188px;
+      height: 191px;
+
+      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url(../images/hero-header/eco-milk-188@2x.png);
+        background-size: 100%;
+      }
     }
   }
 }
