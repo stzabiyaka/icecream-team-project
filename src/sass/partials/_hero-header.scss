@@ -44,6 +44,7 @@
 
 .hero__title {
   max-width: 218px;
+  z-index: 1;
 
   margin-bottom: 20px;
 
@@ -54,10 +55,6 @@
   text-transform: uppercase;
 
   color: #ffffff;
-
-  @include respondTo(-tablet) {
-    z-index: 10;
-  }
 
   @include respondTo(tablet) {
     max-width: 162px;
@@ -95,6 +92,7 @@
 
 .products-link-list {
   display: inline-flex;
+  z-index: 1;
 
   &__item:not(:last-child) {
     margin-right: 8px;
@@ -113,10 +111,6 @@
       font-size: 8px;
       line-height: 1.25;
     }
-  }
-
-  @include respondTo(-tablet) {
-    z-index: 10;
   }
 }
 
@@ -294,8 +288,8 @@
 
 .sales-link-list__item {
   position: relative;
-  z-index: 1;
   margin-bottom: 13px;
+  z-index: 1;
 
   @include respondTo(desktop) {
     margin-bottom: 15px;
@@ -352,7 +346,7 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
 
-    color: #d41443;
+    color: getColor('accent');
 
     @include respondTo(desktop) {
       margin-bottom: 2px;
@@ -363,7 +357,6 @@
   }
 }
 
-// =====read more====
 .read-more-state {
   display: none;
 }

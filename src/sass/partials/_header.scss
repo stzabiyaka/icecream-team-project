@@ -55,8 +55,21 @@
 }
 
 .nav {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 50;
+
+  @include respondTo(-mobile) {
+    width: 250px;
+  }
+
+  @include respondTo(mobile-desktop) {
+    width: 40%;
+  }
+
   @include respondTo(-desktop) {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
 
@@ -64,23 +77,27 @@
 
     padding: 10px 0;
 
-    transform: translateX(110%);
+    transform: translateX(100%);
 
     background-color: getColor('background-mobile-menu');
 
     box-shadow: -8px 0px 20px rgba(0, 0, 0, 0.25);
+
+    transition-property: transform;
+    transition-duration: 2s;
+    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
   }
 
-  @include respondTo(-mobile) {
-    width: 250px;
-  }
-
-  @include respondTo(mobile-desktop) {
-    width: 55%;
+  &.is-open {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
   }
 
   @include respondTo(desktop) {
     display: inline-block;
+    visibility: visible;
+    opacity: 1;
     width: 521px;
   }
 }
@@ -121,7 +138,8 @@
   @include cssTransition(color);
 
   &:hover,
-  &:focus {
+  &:focus,
+  &--current {
     color: getColor('accent');
   }
 
@@ -166,7 +184,7 @@
   &--close {
     margin: 0 10px 10px auto;
 
-    stroke: #ffffff;
+    stroke: getColor('background-primary');
 
     @include cssTransition(stroke);
 
