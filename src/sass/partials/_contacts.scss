@@ -15,9 +15,12 @@
       background: url('../images/contacts/spots_left.png')  top 180px left,
       url('../images/contacts/spots_right.png') top 300px right, linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
       background-repeat: no-repeat;
-            @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-        background-image: url('../images/contacts/spots_left@2x.png'),
-        url('../images/contacts/spots_right@2x.png');
+      background-size: 56px, 56px, 100%;
+    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background: url('../images/contacts/spots_left@2x.png') top 180px left,
+        url('../images/contacts/spots_right@2x.png') top 300px right,  linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
+        background-repeat: no-repeat;
+        background-size: 56px, 56px, 100%;
       }
     }
   }
