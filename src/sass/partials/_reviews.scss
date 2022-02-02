@@ -26,13 +26,6 @@
 
     background-image: repeating-linear-gradient(0deg, #e1e1e1 0px 1px, transparent 1px 31px);
 
-    background-image: repeating-linear-gradient(
-      to bottom #e1e1e1 0px,
-      #e1e1e1 1px,
-      transparent 1px,
-      transparent 31px
-    );
-
     @include respondTo(tablet) {
       font-size: 16px;
       line-height: 1.86;
