@@ -24,58 +24,14 @@
     font-size: 12px;
     line-height: 2.55;
 
-    padding-top: 43px;
-    padding-bottom: 26px;
-    padding-right: 66px;
-    padding-left: 57px;
-
-    $shift: 0px;
-
-    background-image: linear-gradient(
-        to bottom,
-        transparent,
-        transparent $shift,
-        getColor('gradient-grey') $shift,
-        getColor('gradient-grey') $shift + 1px,
-        transparent $shift + 1px,
-        transparent $shift + 31px
-      )
-      // ,
-      // linear-gradient(
-      //   to bottom,
-      //   transparent,
-      //   transparent $shift + 31px,
-      //   getColor('gradient-grey') $shift + 31px,
-      //   getColor('gradient-grey') $shift + 32px,
-      //   transparent $shift + 32px
-      // )
-;
-
-    background-repeat: repeat-y;
+    background-image: repeating-linear-gradient(0deg, #e1e1e1 0 1px, transparent 1px 31px);
 
     background-position-x: center;
-    background-position-y: 78px;
-    background-size: 87% 31px;
-    // background-clip: padding-box;
 
     @include respondTo(tablet) {
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px;
-      padding-bottom: 34px;
-      padding-right: 80px;
-      padding-left: 80px;
-    }
-
-    @include respondTo(desktop) {
-      font-size: 16px;
-      line-height: 1.86;
-      letter-spacing: 0.04em;
-      padding-top: 47px;
-      padding-bottom: 39px;
-      padding-right: 88px;
-      padding-left: 88px;
     }
   }
   &__contact {
@@ -110,18 +66,32 @@
 
 .reviews-article__background {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 52px;
   background: #fafafa;
   z-index: 1;
+
+  padding-top: 43px;
+  padding-bottom: 26px;
+  padding-right: 62px;
+  padding-left: 62px;
 
   @include respondTo(tablet) {
     margin-left: 60px;
     margin-right: 60px;
+    margin-bottom: 42px;
+    padding-top: 47px;
+    padding-bottom: 34px;
+    padding-right: 80px;
+    padding-left: 80px;
   }
 
   @include respondTo(desktop) {
     margin-left: 62px;
     margin-right: 62px;
+    margin-bottom: 34px;
+    padding-bottom: 39px;
+    padding-right: 88px;
+    padding-left: 88px;
   }
 
   &::before {
@@ -141,7 +111,10 @@
     }
   }
   &::after {
-    margin-bottom: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
     content: '...';
     font-size: 32px;
     text-align: center;
@@ -150,6 +123,10 @@
     display: block;
     color: #c7133e;
     background-color: getColor('background-primary');
+
+    @include respondTo(tablet) {
+      bottom: -24px;
+    }
   }
 }
 .reviews__userpic {
