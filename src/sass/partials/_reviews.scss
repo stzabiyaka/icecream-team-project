@@ -26,8 +26,6 @@
 
     background-image: repeating-linear-gradient(0deg, #e1e1e1 0 1px, transparent 1px 31px);
 
-    background-position-x: center;
-
     @include respondTo(tablet) {
       font-size: 16px;
       line-height: 1.86;
@@ -76,13 +74,13 @@
   padding-left: 62px;
 
   @include respondTo(tablet) {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 42px;
     padding-top: 47px;
     padding-bottom: 34px;
-    padding-right: 80px;
-    padding-left: 80px;
+    padding-right: 60px;
+    padding-left: 60px;
   }
 
   @include respondTo(desktop) {
