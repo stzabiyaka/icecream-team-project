@@ -1,3 +1,4 @@
+
 .contacts {
   padding-bottom: 113px;
   @include colorStopeedGradient(5%, 'background-primary', 'background-secondary');
@@ -8,16 +9,13 @@
   }
 
   @include respondTo(desktop) {
-    @include colorStopeedGradient(12%, 'background-primary', 'background-secondary');
     padding-bottom: 165px;
     position: relative;
     z-index: 1;
-      background-image: url('../images/contacts/spots_left.png'),
-      url('../images/contacts/spots_right.png');
+      background: url('../images/contacts/spots_left.png')  top 180px left,
+      url('../images/contacts/spots_right.png') top 300px right, linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
       background-repeat: no-repeat;
-      background-size: 70px, 68px;
-      background-position: top 180px left, top 300px right;
-      @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+            @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
         background-image: url('../images/contacts/spots_left@2x.png'),
         url('../images/contacts/spots_right@2x.png');
       }
