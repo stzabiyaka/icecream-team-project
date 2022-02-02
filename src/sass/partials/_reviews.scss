@@ -29,19 +29,34 @@
     padding-right: 66px;
     padding-left: 57px;
 
+    $shift: 0px;
+
     background-image: linear-gradient(
-      to bottom,
-      getColor('gradient-grey') 1px,
-      getColor('gradient-grey') 2px,
-      transparent 2px,
-      transparent 31px
-    );
+        to bottom,
+        transparent,
+        transparent $shift,
+        getColor('gradient-grey') $shift,
+        getColor('gradient-grey') $shift + 1px,
+        transparent $shift + 1px,
+        transparent $shift + 31px
+      )
+      // ,
+      // linear-gradient(
+      //   to bottom,
+      //   transparent,
+      //   transparent $shift + 31px,
+      //   getColor('gradient-grey') $shift + 31px,
+      //   getColor('gradient-grey') $shift + 32px,
+      //   transparent $shift + 32px
+      // )
+;
 
     background-repeat: repeat-y;
 
     background-position-x: center;
     background-position-y: 78px;
     background-size: 87% 31px;
+    // background-clip: padding-box;
 
     @include respondTo(tablet) {
       font-size: 16px;
@@ -59,8 +74,8 @@
       letter-spacing: 0.04em;
       padding-top: 47px;
       padding-bottom: 39px;
-      padding-right: 89px;
-      padding-left: 87px;
+      padding-right: 88px;
+      padding-left: 88px;
     }
   }
   &__contact {
