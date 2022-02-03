@@ -4,8 +4,8 @@
   bottom: 30px;
 
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 50px;
+  height: 50px;
 
   margin: 0;
   padding: 0;
@@ -14,14 +14,16 @@
 
   background-image: url('../images/up-arrow.svg');
   background-size: contain;
-  filter: opacity(30%);
+  opacity: 0.3;
 
   cursor: pointer;
 
   z-index: 99;
 
+  @include cssTransition(opacity);
+
   &:hover,
   &:focus {
-    filter: opacity(100%);
+    opacity: 1;
   }
 }
