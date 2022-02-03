@@ -12,49 +12,9 @@
 
 .reviews-article {
   position: relative;
-  padding-top: 114px;
-
-  @include respondTo(tablet) {
-    padding-top: 104px;
-  }
-
-  @include respondTo(desktop) {
-    padding-top: 100px;
-  }
 
   &__text {
     position: relative;
-    &::before {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      content: '';
-      width: 65%;
-      height: 76%;
-
-      background-image: repeating-linear-gradient(
-        to top,
-        transparent,
-        transparent 30px,
-        getColor('gradient-grey') 30px,
-        getColor('gradient-grey') 31px
-      );
-
-      transform: translateX(-50%);
-
-      @include respondTo(tablet) {
-        bottom: 2px;
-        height: 70%;
-        width: 78%;
-      }
-
-      @include respondTo(desktop) {
-        bottom: 8px;
-        width: 87%;
-        height: 60%;
-      }
-    }
-
     font-family: $fontPrimary;
     font-weight: 500;
     text-align: center;
@@ -64,29 +24,12 @@
     font-size: 12px;
     line-height: 2.55;
 
-    padding-top: 43px;
-    padding-bottom: 26px;
-    padding-right: 66px;
-    padding-left: 57px;
+    background-image: repeating-linear-gradient(to top, #e1e1e1 0px 1px, transparent 1px 31px);
 
     @include respondTo(tablet) {
       font-size: 16px;
       line-height: 1.86;
       letter-spacing: 0.04em;
-      padding: 47px;
-      padding-bottom: 34px;
-      padding-right: 80px;
-      padding-left: 80px;
-    }
-
-    @include respondTo(desktop) {
-      font-size: 16px;
-      line-height: 1.86;
-      letter-spacing: 0.04em;
-      padding-top: 47px;
-      padding-bottom: 39px;
-      padding-right: 89px;
-      padding-left: 87px;
     }
   }
   &__contact {
@@ -121,24 +64,38 @@
 
 .reviews-article__background {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 52px;
   background: #fafafa;
   z-index: 1;
 
+  padding-top: 43px;
+  padding-bottom: 26px;
+  padding-right: 62px;
+  padding-left: 62px;
+
   @include respondTo(tablet) {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 42px;
+    padding-top: 47px;
+    padding-bottom: 34px;
+    padding-right: 60px;
+    padding-left: 60px;
   }
 
   @include respondTo(desktop) {
     margin-left: 62px;
     margin-right: 62px;
+    margin-bottom: 34px;
+    padding-bottom: 39px;
+    padding-right: 88px;
+    padding-left: 88px;
   }
 
   &::before {
     z-index: -1;
     content: '';
-    background: url('../images/reviews/review-04.png');
+    background: url('../images/reviews/mark.svg');
     background-color: #fafafa;
     position: absolute;
     left: 61px;
@@ -152,7 +109,10 @@
     }
   }
   &::after {
-    margin-bottom: 15px;
+    width: 100%;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
     content: '...';
     font-size: 32px;
     text-align: center;
@@ -161,71 +121,24 @@
     display: block;
     color: #c7133e;
     background-color: getColor('background-primary');
+
+    @include respondTo(tablet) {
+      bottom: -24px;
+    }
   }
 }
-.reviews-article::before {
-  content: '';
-  background: url('../images/reviews/review-01.png');
+.reviews__userpic {
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 29px;
 
-  width: 85px;
-  height: 85px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    content: '';
-    background: url('../images/reviews/review-01-2x.png');
-
-    background-size: cover;
-  }
   @include respondTo(tablet) {
-    // top: -100px;
+    margin-bottom: 19px;
   }
-}
 
-.reviews-article--sliderSecond::before {
-  content: '';
-
-  background: url(../images/reviews/review-02.png);
-
-  width: 85px;
-  height: 85px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    content: '';
-
-    background: url('../images/reviews/review-02-2x.png');
-
-    background-size: cover;
-  }
-}
-.reviews-article--sliderThird::before {
-  content: '';
-
-  background: url('../images/reviews/review-03.png');
-
-  width: 85px;
-  height: 85px;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%);
-
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-    content: '';
-
-    background: url('../images/reviews/review-03-2x.png');
-
-    background-size: cover;
+  @include respondTo(desktop) {
+    margin-bottom: 15px;
   }
 }
 
@@ -234,6 +147,8 @@
   justify-content: center;
   align-items: center;
 }
+
+// swiper script styles
 
 .swiper-pagination-bullet {
   background-size: cover;

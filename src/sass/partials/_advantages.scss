@@ -48,20 +48,20 @@
 }
 
 .advantages__heading_bucket {
-  margin-bottom: 16px;
-  font-size: 36px;
-  line-height: 1.13;
-  letter-spacing: 0.04em;
+  @include respondTo(-mobile) {
+    margin-bottom: 15px;
+  }
 
   @include respondTo(tablet) {
     font-size: 48px;
-    margin-bottom: 13px;
   }
   @include respondTo(desktop) {
     font-size: 58px;
     margin-bottom: 15px;
   }
-
+  font-size: 36px;
+  line-height: 1.13;
+  letter-spacing: 0.04em;
   font-family: $fontSecondary;
   color: getColor('accent');
 
@@ -101,7 +101,6 @@
 }
 
 .advantages__article {
-  margin-top: 15px;
   font-size: 12px;
   line-height: 1.7;
   font-family: $fontPrimary;
