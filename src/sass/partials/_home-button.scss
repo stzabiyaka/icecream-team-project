@@ -1,9 +1,9 @@
-.chat-button {
+.home-button {
   position: fixed;
   right: 30px;
   bottom: 30px;
 
-  display: inline-block;
+  display: block;
   width: 64px;
   height: 64px;
 
@@ -12,10 +12,16 @@
   border: none;
   background-color: transparent;
 
-  background-image: url('../images/up-arrow-5_icon-icons.com_69823.svg');
+  background-image: url('../images/up-arrow.svg');
   background-size: contain;
+  filter: opacity(30%);
 
   cursor: pointer;
 
   z-index: 99;
+
+  &:hover,
+  &:focus {
+    filter: opacity(100%);
+  }
 }
