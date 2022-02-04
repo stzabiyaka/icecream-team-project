@@ -194,7 +194,6 @@
   opacity: 0;
   max-height: 0;
   font-size: 0;
-  transition: $transitionDuration $transitionTiming;
 }
 
 .read-more-state:checked ~ .read-more-wrap .read-more-target {

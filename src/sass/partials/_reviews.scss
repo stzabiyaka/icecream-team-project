@@ -24,7 +24,11 @@
     font-size: 12px;
     line-height: 2.55;
 
-    background-image: repeating-linear-gradient(to top, #e1e1e1 0px 1px, transparent 1px 31px);
+    background-image: repeating-linear-gradient(
+      to top,
+      getColor('gradient-grey') 0px 1px,
+      transparent 1px 31px
+    );
 
     @include respondTo(tablet) {
       font-size: 16px;
@@ -160,12 +164,12 @@
 
   &:first-child {
     border-radius: 0;
-    background-color: #ffffff;
+    background-color: getColor('background-primary');
     background-image: url('../images/reviews/home.svg');
   }
 
   &-active {
-    background-color: #d31342;
+    background-color: getColor('accent');
     background-size: cover;
     background-repeat: no-repeat;
   }
