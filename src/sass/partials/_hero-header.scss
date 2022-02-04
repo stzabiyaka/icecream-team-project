@@ -54,7 +54,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
 
-  color: #ffffff;
+  color: getColor('background-primary');
 
   @include respondTo(tablet) {
     max-width: 162px;
@@ -177,7 +177,7 @@
   font-size: 8px;
   line-height: 1.5;
 
-  color: #ffffff;
+  color: getColor('background-primary');
 
   @include respondTo(desktop) {
     margin: 0 0 20px 0;
@@ -192,6 +192,8 @@
   padding: 0px;
   width: 18px;
   height: 18px;
+
+  @include cssTransition(transform);
 
   @include respondTo(desktop) {
     width: 26px;
@@ -320,7 +322,7 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: getColor('background-primary');
     z-index: -1;
     transform: translate(50%, -15%);
 
@@ -343,7 +345,7 @@
 
   text-decoration: none;
 
-  color: #ffffff;
+  color: getColor('background-primary');
 
   @include respondTo(desktop) {
     font-size: 14px;
@@ -381,7 +383,6 @@
   opacity: 0;
   max-height: 0;
   font-size: 0;
-  transition: $transitionDuration $transitionTiming;
 }
 .read-more-state:checked ~ .hero-article__box .hero-article__text .read-more-target {
   opacity: 1;
@@ -405,13 +406,15 @@
   width: auto;
   max-height: 210px;
 
-  border: 1px solid #ffffff;
+  border: 1px solid getColor('background-primary');
 
   border-radius: 10px;
 
   padding: 10px;
 
   overflow: hidden;
+
+  @include cssTransition(transform);
 
   &::before {
     top: 50%;
@@ -424,7 +427,7 @@
 
 // onload animation //
 
-@include respondTo(desktop) {
+@include respondTo(tablet) {
   .hero {
     overflow: hidden;
   }
@@ -437,9 +440,6 @@
   @keyframes slide-from-bottom {
     00% {
       transform: translateY(100%);
-    }
-    50% {
-      transform: translateY(50%);
     }
     100% {
       transform: translateY(0);
@@ -473,6 +473,24 @@
     }
     100% {
       transform: translateX(0);
+    }
+  }
+
+  .sales-link-list__item {
+    opacity: 0;
+    animation: slide-from-top 350ms linear;
+    animation-iteration-count: 1;
+    animation-delay: 2050ms;
+    animation-fill-mode: forwards;
+  }
+  @keyframes slide-from-top {
+    00% {
+      transform: scale(120%);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(100%);
+      opacity: 1;
     }
   }
 }
