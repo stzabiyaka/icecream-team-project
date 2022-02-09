@@ -130,6 +130,7 @@
     margin-bottom: 25px;
     @include respondTo(tablet) {
       margin-bottom: 35px;
+      min-height: 172px;
     }
     @include respondTo(desktop) {
       margin-bottom: 57px;
@@ -260,19 +261,19 @@
       content: url(../images/products/product-milkshake_tablet@2x.png);
       transform: scaleX(50%) scaleY(50%);
       left: -51%;
-      bottom: 180px;
+      top: -220px;
     }
     .icecoffee::before {
       content: url(../images/products/product-icecoffee_tablet@2x.png);
       transform: scaleX(50%) scaleY(50%);
       left: -51%;
-      bottom: 200px;
+      top: -240px;
     }
     .icecream::before {
       content: url(../images/products/product-icecream_tablet@2x.png);
       transform: scaleX(50%) scaleY(50%);
       left: -51%;
-      bottom: 190px;
+      top: -230px;
     }
   }
 }
