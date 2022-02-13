@@ -283,19 +283,19 @@
     .milkshake::before {
       content: url(../images/products/product-milkshake_pc@2x.png);
       transform: scaleX(50%) scaleY(50%);
-      top: -60%;
+      top: -350px;
       left: -51%;
     }
     .icecoffee::before {
       content: url(../images/products/product-icecoffee_pc@2x.png);
       transform: scaleX(50%) scaleY(50%);
-      top: -60%;
+      top: -350px;
       left: -51%;
     }
     .icecream::before {
       content: url(../images/products/product-icecream_pc@2x.png);
       transform: scaleX(50%) scaleY(50%);
-      top: -60%;
+      top: -350px;
       left: -51%;
     }
   }
@@ -319,7 +319,12 @@
 .read-more-state:checked ~ .read-more {
   transform: rotate(-90deg) scale(120%);
 }
-
+@include respondTo(tablet - desktop) {
+  .read-more-state:checked ~ .products-list__description {
+    min-height: 420px;
+    transition: min-height 0.35s ease-out;
+  }
+}
 // =====================header animation===================
 .products__label span {
   display: inline-block;
