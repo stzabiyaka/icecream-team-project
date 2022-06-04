@@ -68,7 +68,7 @@
   &::before {
     content: '';
     margin-bottom: 16px;
-    background-image: url('/images/advantages/bucket.svg');
+    background-image: url('../images/advantages/bucket.svg');
     width: 33px;
     height: 50px;
     display: block;
@@ -86,14 +86,14 @@
   }
   &--appls {
     &::before {
-      background-image: url('/images/advantages/appls.svg');
+      background-image: url('../images/advantages/appls.svg');
       width: 50px;
       height: 50px;
     }
   }
   &--heart {
     &::before {
-      background-image: url('/images/advantages/heart.svg');
+      background-image: url('../images/advantages/heart.svg');
       width: 44px;
       height: 50px;
     }
