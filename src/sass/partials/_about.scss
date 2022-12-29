@@ -9,7 +9,9 @@
   background-size: 40px, 68px;
   background-position: top 730px left, top 740px right;
 
-  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     background-image: url('../images/about/milk-left-mobile@2x.png'),
       url('../images/about/milk-right-mobile@2x.png');
   }
@@ -140,7 +142,9 @@
     background-size: 161px, 268px;
     background-position: top 340px left, top 400px right;
 
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
       background-image: url('../images/about/milk-left-desktop@2x.png'),
         url('../images/about/milk-right-desktop@2x.png');
     }
@@ -196,10 +200,28 @@
   font-size: 0;
 }
 
-.read-more-state:checked ~ .read-more-wrap .read-more-target {
-  opacity: 1;
-  font-size: inherit;
-  max-height: 999em;
+.read-less-label-span {
+  display: none;
+}
+
+.read-more-state:checked ~ .read-more-wrap {
+  & .read-more-target {
+    opacity: 1;
+    font-size: inherit;
+    max-height: 999em;
+  }
+
+  & .read-less-label-span {
+    display: inline;
+  }
+
+  & .read-more-label-span {
+    display: none;
+  }
+
+  & .button__icon {
+    transform: rotateY(180deg);
+  }
 }
 
 .button-about {

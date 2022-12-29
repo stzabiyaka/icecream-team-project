@@ -1,29 +1,40 @@
-
 .contacts {
   padding-bottom: 113px;
-  @include colorStopeedGradient(5%, 'background-primary', 'background-secondary');
+  @include colorStopeedGradient(
+    5%,
+    'background-primary',
+    'background-secondary'
+  );
 
   @include respondTo(tablet) {
     padding-bottom: 165px;
-    @include colorStopeedGradient(9%, 'background-primary', 'background-secondary');
+    @include colorStopeedGradient(
+      9%,
+      'background-primary',
+      'background-secondary'
+    );
   }
 
   @include respondTo(desktop) {
     padding-bottom: 165px;
     position: relative;
     z-index: 1;
-      background: url('../images/contacts/spots_left.png')  top 180px left,
-      url('../images/contacts/spots_right.png') top 300px right, linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
+    background: url('../images/contacts/spots_left.png') top 180px left,
+      url('../images/contacts/spots_right.png') top 300px right,
+      linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
+    background-repeat: no-repeat;
+    background-size: 56px, 56px, 100%;
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url('../images/contacts/spots_left@2x.png') top 180px left,
+        url('../images/contacts/spots_right@2x.png') top 300px right,
+        linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
       background-repeat: no-repeat;
       background-size: 56px, 56px, 100%;
-    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-        background: url('../images/contacts/spots_left@2x.png') top 180px left,
-        url('../images/contacts/spots_right@2x.png') top 300px right,  linear-gradient(to bottom, #ffffff 12%, #fff5f6 12%);
-        background-repeat: no-repeat;
-        background-size: 56px, 56px, 100%;
-      }
     }
   }
+}
 
 .contacts__list {
   display: flex;
@@ -281,9 +292,9 @@
   margin-bottom: 10px;
 
   @include respondTo(tablet) {
-   margin-right: 15px;
+    margin-right: 15px;
     margin-bottom: 0;
-   }
+  }
 }
 
 .extra-map {
@@ -311,7 +322,7 @@
   border-radius: 20px;
   box-shadow: 0px 8px 30px rgba(212, 20, 67, 0.1);
 
-  &.is-frncs {
+  &.is-franchise {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -333,4 +344,9 @@
     font-size: 14px;
     color: getColor('text-primary');
   }
+}
+
+.is-map > .button__icon,
+.is-franchise > .button__icon {
+  transform: rotateZ(-90deg);
 }
